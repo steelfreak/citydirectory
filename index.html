@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png" />
+  <title>Gulu City Directory</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f9fafb;
+      color: #333;
+      line-height: 1.6;
+    }
+    .directory {
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.75rem;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content {
+      padding: 1rem 1.25rem 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card-content h3 {
+      margin: 1rem 0 1.5rem 0;
+      font-size: 1.15rem;
+      color: #004080;
+      text-align: center;
+      font-weight: 600;
+    }
+    .card-content .button {
+      background-color: #0077cc;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 1rem;
+      display: inline-block;
+    }
+    .card-content .button:hover {
+      background-color: #004080;
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav a:first-child {
+      margin-left: 0;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color: #ffb400;
+    }
+    .hero {
+      background: url('index.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 64, 128, 0.6);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .search-bar {
+      max-width: 500px;
+      margin: 0 auto 3rem;
+      display: flex;
+      gap: 0.75rem;
+    }
+    .search-bar input,
+    .search-bar select {
+      flex: 1;
+      padding: 1rem 1rem;
+      font-size: 1.2rem;
+      border: 2px solid #0077cc;
+      border-radius: 5px;
+      outline-offset: 2px;
+      transition: border-color 0.3s ease;
+    }
+    .search-bar input:focus,
+    .search-bar select:focus {
+      border-color: #004080;
+    }
+    .search-bar button {
+      background-color: #0077cc;
+      border: none;
+      color: white;
+      padding: 1rem 1.5rem;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .search-bar button:hover {
+      background-color: #004080;
+    }
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 1rem 2rem;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 1rem;
+        width: 100%;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 1rem;
+        display: inline-block;
+        font-size: 1.1rem;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+
+      /* Stack search elements vertically and increase padding */
+      .search-bar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .search-bar input,
+      .search-bar select,
+      .search-bar button {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    /* WhatsApp Floating Button */
+    #whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: transform 0.2s ease;
+    }
+    #whatsapp-button:focus,
+    #whatsapp-button:hover {
+      outline: none;
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* WhatsApp Chat Overlay and Dialog */
+    .whatsapp-chat-overlay[hidden] {
+      display: none;
+    }
+    .whatsapp-chat-overlay:not([hidden]) {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 1rem;
+      z-index: 1001;
+      cursor: pointer;
+    }
+    .whatsapp-chat {
+      background: white;
+      width: 320px;
+      max-width: 100%;
+      border-radius: 16px 16px 0 0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      max-height: 80vh;
+      cursor: default;
+    }
+    /* Center chat box on small screens */
+    @media (max-width: 480px) {
+      .whatsapp-chat-overlay:not([hidden]) {
+        justify-content: center;
+        align-items: center;
+      }
+      .whatsapp-chat {
+        width: 90vw;
+        max-height: 90vh;
+        border-radius: 12px;
+      }
+    }
+    .whatsapp-chat header {
+      background: #25d366;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 16px 16px 0 0;
+    }
+    .whatsapp-chat header h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .whatsapp-chat header button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.75rem;
+      cursor: pointer;
+      font-weight: 700;
+      line-height: 1;
+      padding: 0;
+      margin: 0;
+      width: 36px;
+      height: 36px;
+    }
+    .whatsapp-chat header button:focus-visible {
+      outline: 2px solid #004080;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    .whatsapp-chat main {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 1rem;
+      background: #f7f7f7;
+    }
+    .chat-messages {
+      flex-grow: 1;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #222;
+    }
+    .chat-message {
+      margin-bottom: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+    .chat-message.user {
+      background: #dcf8c6;
+      align-self: flex-end;
+    }
+    #chat-form {
+      display: flex;
+      gap: 0.5rem;
+    }
+    #chat-input {
+      flex-grow: 1;
+      padding: 0.6rem 0.8rem;
+      font-size: 1rem;
+      border-radius: 9999px;
+      border: 1px solid #ccc;
+      outline-offset: 2px;
+    }
+    #chat-input:focus {
+      border-color: #25d366;
+      outline: none;
+      box-shadow: 0 0 4px #25d366;
+    }
+    #chat-form button {
+      background-color: #25d366;
+      color: white;
+      border: none;
+      padding: 0 1rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    #chat-form button:hover,
+    #chat-form button:focus-visible {
+      background-color: #20b858;
+      outline-offset: 2px;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gulu City Directory</h1>
+    <!-- <nav>
+      <a href="#businesses">Businesses</a>
+      <a href="#attractions">Attractions</a>
+      <a href="#events">Events</a>
+      <a href="#services">Services</a>
+    </nav> -->
+  </header>
+
+  <section class="hero" aria-label="Gulu City introduction">
+    <div class="hero-content">
+      <h2>Discover Gulu City</h2>
+      <p>Your comprehensive guide to businesses, attractions, events, and services in Gulu, Uganda.</p>
+    </div>
+  </section>
+
+  <section aria-label="Search directory" style="padding: 2rem 1rem 0;">
+    <form class="search-bar" id="search-form" onsubmit="return false;">
+      <input type="text" id="search-input" placeholder="Search listings..." aria-label="Search listings" />
+      <select id="category-filter" aria-label="Filter by category">
+        <option value="all">All Categories</option>
+        <option value="business">Businesses</option>
+        <option value="attraction">Attractions</option>
+        <option value="event">Events</option>
+        <option value="service">Services</option>
+      </select>
+      <button type="submit" aria-label="Search">Search</button>
+    </form>
+  </section>
+
+  <main>
+    <section id="directory" class="directory" aria-live="polite" aria-label="Directory listings">
+      <!-- Cards will be inserted here by JavaScript -->
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Gulu City Directory. All rights reserved.
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <div id="whatsapp-button" aria-label="Open WhatsApp chat" role="button" tabindex="0">
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="#25D366"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M20.52 3.48A11.78 11.78 0 0 0 12 1a11.93 11.93 0 0 0-8.46 3.54 12.03 12.03 0 0 0-3.55 8.5c0 2.35.73 4.61 2.15 6.45L1 23l5.61-1.46a11.88 11.88 0 0 0 5.39 1.32c6.62 0 12-5.38 12-12a11.85 11.85 0 0 0-3.48-8.48ZM12 21a9.68 9.68 0 0 1-5.05-1.37l-.36-.22-3.33.86.89-3.24-.23-.35A9.67 9.67 0 1 1 21 12a9.52 9.52 0 0 1-9 9Zm5.19-6.74c-.22-.11-1.31-.65-1.52-.73-.2-.08-.34-.11-.48.11s-.55.72-.68.86-.25.13-.46.05a6.84 6.84 0 0 1-2-1.23 7.5 7.5 0 0 1-1.39-1.71c-.15-.26-.02-.4.11-.53.11-.11.25-.29.37-.44s.15-.21.22-.35a.41.41 0 0 0 0-.38c-.06-.11-.48-1.15-.66-1.57s-.33-.36-.48-.36h-.41a1.13 1.13 0 0 0-.82.38 3.51 3.51 0 0 0-1.06 2.52 4.82 4.82 0 0 0 1.14 3.28 13.79 13.79 0 0 0 5.12 4.06 15 15 0 0 0 2.24.81 3.53 3.53 0 0 0 2.81-.27 3.46 3.46 0 0 0 1.15-2.61c.01-.18-.07-.3-.15-.37Z"
+      />
+    </svg>
+  </div>
+
+  <!-- WhatsApp Chat Dialog -->
+  <div
+    class="whatsapp-chat-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="whatsapp-chat-title"
+    hidden
+  >
+    <div class="whatsapp-chat" tabindex="-1">
+      <header>
+        <h2 id="whatsapp-chat-title">Chat with us on WhatsApp</h2>
+        <button aria-label="Close chat" id="close-chat-btn">&times;</button>
+      </header>
+      <main>
+        <form id="chat-form" autocomplete="off">
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Type your message..."
+            aria-label="Type your message"
+            required
+          />
+          <button type="submit" aria-label="Send message">Send</button>
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const listings = [
+      {
+        id: 1,
+        title: 'Banks',
+        image: 'banks/index.jpg',
+        url: 'banks/index.html',
+        category: 'business',
+        description: '',
+      },
+      {
+        id: 2,
+        title: 'Hospitals',
+        image: 'hospitals/index.jpg',
+        url: 'hospitals/index.html',
+        category: 'service',
+        description: '',
+      },
+      {
+        id: 3,
+        title: 'Hotels',
+        image: 'hotels/index.jpg',
+        url: 'hotels/index.html',
+        category: 'business',
+        description: '',
+      },
+      {
+        id: 4,
+        title: 'Radio Stations',
+        image: 'radios/index.jpg',
+        url: 'radios/index.html',
+        category: 'service',
+        description: '',
+      },
+      {
+        id: 5,
+        title: 'Sports Places',
+        image: 'sports/index.jpg',
+        url: 'sports/index.html',
+        category: 'attraction',
+        description: '',
+      },
+      {
+        id: 6,
+        title: 'Events & Tour Sites',
+        image: 'events/index.jpg',
+        url: 'events/index.html',
+        category: 'event',
+        description: '',
+      },
+    ];
+
+    const directoryEl = document.getElementById('directory');
+    const searchInput = document.getElementById('search-input');
+    const categoryFilter = document.getElementById('category-filter');
+    const searchForm = document.getElementById('search-form');
+
+    function renderListings() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const category = categoryFilter.value;
+
+      const filtered = listings.filter((item) => {
+        const matchesCategory = category === 'all' || item.category === category;
+        const desc = item.description || '';
+        const matchesSearch =
+          item.title.toLowerCase().includes(searchTerm) ||
+          desc.toLowerCase().includes(searchTerm);
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        directoryEl.innerHTML =
+          '<p style="grid-column: 1/-1; text-align:center; font-size:1.2rem; color:#666;">No listings found.</p>';
+        return;
+      }
+
+      directoryEl.innerHTML = filtered
+        .map(
+          (item) => `
+        <article class="card">
+          <img src="${item.image}" alt="${item.title}" />
+          <div class="card-content">
+            <h3>${item.title}</h3>
+            <a class="button" href="${item.url}">More Info</a>
+          </div>
+        </article>
+      `
+        )
+        .join('');
+    }
+
+    renderListings();
+
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      renderListings();
+    });
+    searchInput.addEventListener('input', renderListings);
+    categoryFilter.addEventListener('change', renderListings);
+
+    // WhatsApp chat elements
+    const whatsappButton = document.getElementById('whatsapp-button');
+    const chatOverlay = document.querySelector('.whatsapp-chat-overlay');
+    const closeChatBtn = document.getElementById('close-chat-btn');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const chatDialog = document.querySelector('.whatsapp-chat');
+
+    // Open chat dialog
+    whatsappButton.addEventListener('click', () => {
+      chatOverlay.hidden = false;
+      chatDialog.focus();
+      chatInput.focus();
+    });
+
+    // Keyboard accessible open (Enter/Space)
+    whatsappButton.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        whatsappButton.click();
+      }
+    });
+
+    // Close chat dialog by close button
+    closeChatBtn.addEventListener('click', () => {
+      closeChat();
+    });
+
+    // Close chat dialog by clicking outside chat box
+    chatOverlay.addEventListener('click', (e) => {
+      if (e.target === chatOverlay) {
+        closeChat();
+      }
+    });
+
+    // Close chat dialog helper
+    function closeChat() {
+      chatOverlay.hidden = true;
+      whatsappButton.focus();
+      chatInput.value = '';
+    }
+
+    // Handle chat form submit - redirect to WhatsApp with message
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const message = chatInput.value.trim();
+      if (!message) return;
+
+      const encodedMessage = encodeURIComponent(message);
+
+      // TODO: Replace with your WhatsApp phone number without + or spaces
+      const phoneNumber = '256783338952';
+
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      window.open(whatsappURL, '_blank');
+
+      closeChat();
+    });
+
+    // Optional: trap focus inside chat dialog while open
+    // (Can add more advanced keyboard handling if needed)
+  </script>
+</body>
+</html>

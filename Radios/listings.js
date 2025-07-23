@@ -1,0 +1,135 @@
+// listings.js
+const listings = [
+  {
+    "id": 1753126422603,
+    "category": "Radio Station",
+    "title": "Radio King",
+    "description": null,
+    "image": null,
+    "contact": null,
+    "address": "3B Elizabeth Road, Gulu",
+    "rating": null,
+    "url": null,
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63762.681408122844!2d32.18992754863283!3d2.766711900000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a7232330b819%3A0x2ddbfb611a4ab321!2sRadio%20King!5e0!3m2!1sen!2sug!4v1753125193583!5m2!1sen!2sug"
+  },
+  {
+    "id": 1753126487623,
+    "category": "Radio Station",
+    "title": "Radio Rupiny",
+    "description": null,
+    "image": null,
+    "contact": "0414235843",
+    "address": "http://www.visiongroup.co.ug/",
+    "rating": null,
+    "url": null,
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63762.681408122844!2d32.18992754863283!3d2.766711900000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a73db4b1322f%3A0x2504fbec3334bb08!2sRadio%20Rupiny!5e0!3m2!1sen!2sug!4v1753125291107!5m2!1sen!2sug"
+  },
+  {
+    "id": 1753126586212,
+    "category": "Radio Station",
+    "title": "Calvary Radio 105.3 FM",
+    "description": null,
+    "image": null,
+    "contact": "0781522895",
+    "address": "22 Gulu - Kitgum Rd, Gulu",
+    "rating": null,
+    "url": null,
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63762.681408122844!2d32.18992754863283!3d2.766711900000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a785296d2371%3A0x1e0cedea290474ef!2sCalvary%20Radio%20105.3%20FM!5e0!3m2!1sen!2sug!4v1753125464841!5m2!1sen!2sug"
+  },
+  {
+    "id": 1753126683726,
+    "category": "Radio Station",
+    "title": "ABS FM",
+    "description": null,
+    "image": null,
+    "contact": "0414663304",
+    "address": "Plot 56 Acholi Rd, Gulu",
+    "rating": null,
+    "url": "http://acholibsfm.com/",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63762.681408122844!2d32.18992754863283!3d2.766711900000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a6365a674263%3A0xdc1b954795944de!2sABS%20FM!5e0!3m2!1sen!2sug!4v1753125523055!5m2!1sen!2sug"
+  },
+  {
+    "id": 1753126743318,
+    "category": "Radio Station",
+    "title": "MEGA 100 FM",
+    "description": null,
+    "image": null,
+    "contact": "0780178741",
+    "address": null,
+    "rating": null,
+    "url": null,
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63762.681408122844!2d32.18992754863283!3d2.766711900000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a7d831cdc0ad%3A0x56d65f03ffef4d12!2sMEGA%20100%20FM!5e0!3m2!1sen!2sug!4v1753125577579!5m2!1sen!2sug"
+  },
+  {
+    "id": 1753126819255,
+    "category": "Radio Station",
+    "title": "Favour FM 104.1",
+    "description": null,
+    "image": null,
+    "contact": "0783833237",
+    "address": "Alex Latim Road, Gulu",
+    "rating": null,
+    "url": null,
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63762.681408122844!2d32.18992754863283!3d2.766711900000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a7b9561ce91d%3A0x28cfeacf59029f8a!2sFavour%20FM%20104.1!5e0!3m2!1sen!2sug!4v1753125648173!5m2!1sen!2sug"
+  },
+  {
+    "id": 1753126888186,
+    "category": "Radio Station",
+    "title": "Radio Maria Gulu",
+    "description": null,
+    "image": null,
+    "contact": null,
+    "address": "Holy Rosary, Jomo Kenyatta Rd, Gulu",
+    "rating": null,
+    "url": null,
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63762.681408122844!2d32.18992754863283!3d2.766711900000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a6482941e4d1%3A0xf0b1f9ffae340b5b!2sRadio%20Maria%20Gulu!5e0!3m2!1sen!2sug!4v1753125704941!5m2!1sen!2sug"
+  },
+  {
+    "id": 1753126956420,
+    "category": "Radio Station",
+    "title": "92.1 CHOICE FM",
+    "description": null,
+    "image": null,
+    "contact": "0772570117",
+    "address": "Lira - Gulu Rd, Gulu",
+    "rating": null,
+    "url": null,
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63762.681408122844!2d32.18992754863283!3d2.766711900000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a645d20c9037%3A0x86e8131792354067!2s92.1%20CHOICE%20FM!5e0!3m2!1sen!2sug!4v1753125756969!5m2!1sen!2sug"
+  },
+  {
+    "id": 1753127034255,
+    "category": "Radio Station",
+    "title": "89.5 Speak FM Gulu",
+    "description": null,
+    "image": null,
+    "contact": "0758670053",
+    "address": "Ali Openy Road plot 15, Gulu",
+    "rating": null,
+    "url": null,
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63762.681408122844!2d32.18992754863283!3d2.766711900000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a62e3964467f%3A0x42a182b1fd9e5b50!2s89.5%20Speak%20FM%20Gulu!5e0!3m2!1sen!2sug!4v1753125804656!5m2!1sen!2sug"
+  },
+  {
+    "id": 1753127125375,
+    "category": "Radio Station",
+    "title": "Radio Pacis Gulu",
+    "description": null,
+    "image": null,
+    "contact": "0772973072",
+    "address": "Airport Rd, Gulu",
+    "rating": null,
+    "url": "http://www.radiopacis.org/",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63762.681408122844!2d32.18992754863283!3d2.766711900000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a60a05d7bb9b%3A0xfc1a2ed0b7b518aa!2sRadio%20Pacis%20Gulu!5e0!3m2!1sen!2sug!4v1753125871716!5m2!1sen!2sug"
+  },
+  {
+    "id": 1753127208444,
+    "category": "Radio Station",
+    "title": "90.2 FM Radio King",
+    "description": null,
+    "image": null,
+    "contact": "0774005359",
+    "address": "Plot 2A Lower Churchill Dr, Gulu",
+    "rating": null,
+    "url": null,
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63762.681408122844!2d32.18992754863283!3d2.766711900000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a7391ec3c273%3A0xa656b88dcf7148b4!2s90.2%20FM%20Radio%20King!5e0!3m2!1sen!2sug!4v1753125926789!5m2!1sen!2sug"
+  }
+];

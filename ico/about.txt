@@ -1,0 +1,15 @@
+This favicon was generated using the following font:
+
+- Font Title: Abril Fatface
+- Font Author: undefined
+- Font Source: https://fonts.gstatic.com/s/abrilfatface/v24/zOL64pLDlL1D99S8g8PtiKchm-BsjOLhZBY.ttf
+- Font License: undefined)
+
+
+
+Put this in the <head></head> tag
+
+  <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
