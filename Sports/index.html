@@ -142,8 +142,6 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
     }
-    /* Images removed; no img styles */
-
     .card-content {
       padding: 1rem 1.25rem 1.5rem;
       flex-grow: 1;
@@ -365,6 +363,139 @@
         font-size: 1rem;
       }
     }
+
+    /* === WhatsApp Floating Button and Chat Styles === */
+    #whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: transform 0.2s ease;
+    }
+    #whatsapp-button:focus,
+    #whatsapp-button:hover {
+      outline: none;
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+    .whatsapp-chat-overlay[hidden] {
+      display: none;
+    }
+    .whatsapp-chat-overlay:not([hidden]) {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 1rem;
+      z-index: 1001;
+      cursor: pointer;
+    }
+    @media (max-width: 480px) {
+      .whatsapp-chat-overlay:not([hidden]) {
+        justify-content: center;
+        align-items: center;
+      }
+      .whatsapp-chat {
+        width: 90vw;
+        max-height: 90vh;
+        border-radius: 12px;
+      }
+    }
+    .whatsapp-chat {
+      background: white;
+      width: 320px;
+      max-width: 100%;
+      border-radius: 16px 16px 0 0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      max-height: 80vh;
+      cursor: default;
+    }
+    .whatsapp-chat header {
+      background: #25d366;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 16px 16px 0 0;
+    }
+    .whatsapp-chat header h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .whatsapp-chat header button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.75rem;
+      cursor: pointer;
+      font-weight: 700;
+      line-height: 1;
+      padding: 0;
+      margin: 0;
+      width: 36px;
+      height: 36px;
+    }
+    .whatsapp-chat header button:focus-visible {
+      outline: 2px solid #004080;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    .whatsapp-chat main {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 1rem;
+      background: #f7f7f7;
+    }
+    #chat-form {
+      display: flex;
+      gap: 0.5rem;
+    }
+    #chat-input {
+      flex-grow: 1;
+      padding: 0.6rem 0.8rem;
+      font-size: 1rem;
+      border-radius: 9999px;
+      border: 1px solid #ccc;
+      outline-offset: 2px;
+    }
+    #chat-input:focus {
+      border-color: #25d366;
+      outline: none;
+      box-shadow: 0 0 4px #25d366;
+    }
+    #chat-form button {
+      background-color: #25d366;
+      color: white;
+      border: none;
+      padding: 0 1rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    #chat-form button:hover,
+    #chat-form button:focus-visible {
+      background-color: #20b858;
+      outline-offset: 2px;
+      outline: none;
+    }
   </style>
 </head>
 <body>
@@ -404,7 +535,7 @@
     </section>
   </main>
 
-  <!-- Updated footer with Common Links -->
+  <!-- Footer -->
   <footer class="responsive-footer" role="contentinfo" aria-label="Footer with common links">
     <div class="footer-container">
       <div class="footer-section">
@@ -417,8 +548,6 @@
         <a href="../Sports/index.html">Sports Places</a>
         <a href="../Events/index.html">Events</a>        
         <a href="../Jobs/index.html">Jobs</a>
-        
-        
       </div>
     </div>
     <div class="footer-bottom">
@@ -430,7 +559,6 @@
   <div id="details-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
     <div class="modal-content">
       <h3 id="modal-title"></h3>
-      <!-- Image removed -->
       <p id="modal-desc"></p>
       <p class="info" id="modal-contact"></p>
       <p class="info" id="modal-address"></p>
@@ -441,9 +569,56 @@
     </div>
   </div>
 
+  <!-- WhatsApp Floating Button -->
+  <div id="whatsapp-button" aria-label="Open WhatsApp chat" role="button" tabindex="0">
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="#25D366"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M20.52 3.48A11.78 11.78 0 0 0 12 1a11.93 11.93 0 0 0-8.46 3.54 12.03 12.03 0 0 0-3.55 8.5c0 2.35.73 4.61 2.15 6.45L1 23l5.61-1.46a11.88 11.88 0 0 0 5.39 1.32c6.62 0 12-5.38 12-12a11.85 11.85 0 0 0-3.48-8.48ZM12 21a9.68 9.68 0 0 1-5.05-1.37l-.36-.22-3.33.86.89-3.24-.23-.35A9.67 9.67 0 1 1 21 12a9.52 9.52 0 0 1-9 9Zm5.19-6.74c-.22-.11-1.31-.65-1.52-.73-.2-.08-.34-.11-.48.11s-.55.72-.68.86-.25.13-.46.05a6.84 6.84 0 0 1-2-1.23 7.5 7.5 0 0 1-1.39-1.71c-.15-.26-.02-.4.11-.53.11-.11.25-.29.37-.44s.15-.21.22-.35a.41.41 0 0 0 0-.38c-.06-.11-.48-1.15-.66-1.57s-.33-.36-.48-.36h-.41a1.13 1.13 0 0 0-.82.38 3.51 3.51 0 0 0-1.06 2.52 4.82 4.82 0 0 0 1.14 3.28 13.79 13.79 0 0 0 5.12 4.06 15 15 0 0 0 2.24.81 3.53 3.53 0 0 0 2.81-.27 3.46 3.46 0 0 0 1.15-2.61c.01-.18-.07-.3-.15-.37Z"
+      />
+    </svg>
+  </div>
+
+  <!-- WhatsApp Chat Dialog -->
+  <div
+    class="whatsapp-chat-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="whatsapp-chat-title"
+    hidden
+  >
+    <div class="whatsapp-chat" tabindex="-1">
+      <header>
+        <h2 id="whatsapp-chat-title">Chat with us on WhatsApp</h2>
+        <button aria-label="Close chat" id="close-chat-btn">&times;</button>
+      </header>
+      <main>
+        <form id="chat-form" autocomplete="off">
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Type your message..."
+            aria-label="Type your message"
+            required
+          />
+          <button type="submit" aria-label="Send message">Send</button>
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <!-- Your existing listings.js file -->
   <script src="listings.js"></script>
 
   <script>
+    /* --- Directory Listing Pagination and Modal --- */
     const itemsPerPage = 3;
     let currentPage = 1;
 
@@ -486,7 +661,8 @@
 
       const filtered = listings.filter(item => {
         const matchesCategory = category === 'all' || item.category === category;
-        const matchesSearch = item.title.toLowerCase().includes(searchTerm) || item.description.toLowerCase().includes(searchTerm);
+        const desc = item.description || '';
+        const matchesSearch = item.title.toLowerCase().includes(searchTerm) || desc.toLowerCase().includes(searchTerm);
         return matchesCategory && matchesSearch;
       });
 
@@ -563,7 +739,7 @@
       modalUrl.href = item.url || '#';
       modalUrl.textContent = 'Visit Website';
       modalUrl.setAttribute('aria-label', `Visit website for ${item.title}`);
-      
+
       modalMap.src = item.map || '';
 
       modal.style.display = 'block';
@@ -597,6 +773,60 @@
     });
 
     renderListings();
+
+    /* --- WhatsApp Chat JavaScript --- */
+    const whatsappButton = document.getElementById('whatsapp-button');
+    const chatOverlay = document.querySelector('.whatsapp-chat-overlay');
+    const closeChatBtn = document.getElementById('close-chat-btn');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const chatDialog = document.querySelector('.whatsapp-chat');
+
+    whatsappButton.addEventListener('click', () => {
+      chatOverlay.hidden = false;
+      chatDialog.focus();
+      chatInput.focus();
+    });
+
+    whatsappButton.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        whatsappButton.click();
+      }
+    });
+
+    closeChatBtn.addEventListener('click', () => {
+      closeChat();
+    });
+
+    chatOverlay.addEventListener('click', (e) => {
+      if (e.target === chatOverlay) {
+        closeChat();
+      }
+    });
+
+    function closeChat() {
+      chatOverlay.hidden = true;
+      whatsappButton.focus();
+      chatInput.value = '';
+    }
+
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const message = chatInput.value.trim();
+      if (!message) return;
+
+      const encodedMessage = encodeURIComponent(message);
+
+      // Updated WhatsApp phone number (no + or spaces)
+      const phoneNumber = '256783338952';
+
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      window.open(whatsappURL, '_blank');
+
+      closeChat();
+    });
   </script>
+
 </body>
 </html>
