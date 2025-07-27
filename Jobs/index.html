@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" sizes="16x16" href="../ico/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../ico/favicon-16x16.png" />
   <link rel="canonical" href="https://dgulu.com/index.html" />
 
   <title>Gulu City Directory</title>
@@ -118,32 +118,6 @@
       }
     }
 
-    /* Back button container (below search bar) */
-    .back-button-container {
-      max-width: 1200px;
-      margin: 1rem auto;
-      padding: 0 1rem;
-    }
-    .back-button-container a.back-link {
-      background-color: #0077cc;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      display: inline-block;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-    .back-button-container a.back-link:hover {
-      background-color: #004080;
-    }
-    @media (max-width: 400px) {
-      .back-button-container a.back-link {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.95rem;
-      }
-    }
-
     /* Directory Grid */
     .directory {
       max-width: 1200px;
@@ -168,14 +142,13 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
     }
+    /* Images removed; no img styles */
+
     .card-content {
       padding: 1rem 1.25rem 1.5rem;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
-      gap: 0.3rem;
-      font-size: 0.95rem;
-      position: relative;
     }
     .card-content h3 {
       margin: 0 0 0.5rem;
@@ -183,9 +156,21 @@
       color: #004080;
     }
     .card-content p {
-      margin: 0;
+      flex-grow: 1;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
       color: #555;
     }
+    .card-content .info {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 0.5rem;
+    }
+    .card-content .rating {
+      color: #ffb400;
+      font-weight: 700;
+    }
+    .card-content a.button,
     .card-content button.button {
       align-self: flex-start;
       background-color: #0077cc;
@@ -193,35 +178,69 @@
       padding: 0.5rem 1rem;
       border-radius: 5px;
       font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
       cursor: pointer;
       border: none;
       font-family: inherit;
       font-size: 1rem;
-      margin-top: 1rem;
-      transition: background-color 0.3s ease;
-      position: relative;
     }
+    .card-content a.button:hover,
     .card-content button.button:hover {
       background-color: #004080;
     }
 
-    /* Badge Styles */
-    .badge {
+    /* Back button container */
+    .back-button-container {
+      max-width: 1200px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+    }
+    .back-button-container a.back-link {
+      background-color: #0077cc;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
       display: inline-block;
-      padding: 0.25em 0.6em;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #fff;
-      border-radius: 12px;
-      margin-left: 0.6rem;
-      vertical-align: middle;
-      user-select: none;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
     }
-    .badge.active {
-      background-color: #28a745; /* green */
+    .back-button-container a.back-link:hover {
+      background-color: #004080;
     }
-    .badge.expired {
-      background-color: #dc3545; /* red */
+
+    /* Remove old footer styles */
+    footer {
+      background: none;
+      color: inherit;
+      text-align: inherit;
+      padding: 0;
+      font-size: inherit;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 1rem;
+        width: 100%;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 1rem;
+        display: inline-block;
+        font-size: 1.1rem;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
     }
 
     /* Modal styles */
@@ -237,7 +256,7 @@
       box-sizing: border-box;
     }
     #details-modal .modal-content {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.85);
       max-width: 700px;
       margin: 0 auto;
       border-radius: 10px;
@@ -247,28 +266,32 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      font-size: 1rem;
-      color: #333;
     }
 
     /* Modal text */
     #details-modal h3 {
       margin: 0;
       color: #004080;
-      font-size: 1.5rem;
     }
     #details-modal p {
       margin: 0.25rem 0;
       color: #444;
-      line-height: 1.4;
     }
-    #details-modal p strong {
-      color: #004080;
+    #details-modal .info {
+      font-size: 0.95rem;
+      color: #666;
     }
-    #details-modal hr {
-      margin: 1rem 0;
+    #details-modal .rating {
+      color: #ffb400;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    #details-modal iframe {
+      width: 100%;
+      height: 300px;
       border: none;
-      border-top: 1px solid #ddd;
+      border-radius: 8px;
+      margin-top: 1rem;
     }
     #details-modal button.back-btn {
       align-self: flex-start;
@@ -287,35 +310,59 @@
     #details-modal button.back-btn:hover {
       background-color: #004080;
     }
-    /* Badge in modal next to position */
-    #modal-position-container {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.1rem;
-      color: #004080;
-      font-weight: 600;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #004080;
-      color: white;
-      text-align: center;
-      padding: 1rem 2rem;
-      font-size: 0.9rem;
-    }
 
     @media (max-width: 600px) {
       #details-modal .modal-content {
         padding: 1rem;
-        font-size: 0.9rem;
+      }
+      #details-modal iframe {
+        height: 200px;
       }
     }
-    @media (max-width: 400px) {
-      .back-button-container a.back-link {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.95rem;
+
+    /* ===== New footer styles for Common Links footer ===== */
+    footer.responsive-footer {
+      background: #23272f;
+      color: #f2f2f2;
+      padding: 40px 0 20px 0;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin-top: 40px;
+    }
+    footer.responsive-footer .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    footer.responsive-footer .footer-section {
+      margin: 0 auto;
+      max-width: 600px;
+    }
+    footer.responsive-footer .footer-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: #ffcf4b;
+    }
+    footer.responsive-footer .footer-section a {
+      display: inline-block;
+      margin: 0 15px 15px 15px;
+      color: #f2f2f2;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    footer.responsive-footer .footer-section a:hover {
+      color: #ffcf4b;
+    }
+    footer.responsive-footer .footer-bottom {
+      margin-top: 40px;
+      color: #888;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 600px) {
+      footer.responsive-footer .footer-section a {
+        margin: 0 10px 12px 10px;
+        font-size: 1rem;
       }
     }
   </style>
@@ -347,41 +394,56 @@
     </form>
   </section>
 
-  <div class="back-button-container">
-    <a href="../index.html" class="back-link" aria-label="Go back to home page">← Back</a>
-  </div>
-
   <main>
+    <div class="back-button-container">
+      <a href="../index.html" class="back-link" aria-label="Go back to home page">← Back</a>
+    </div>
+
     <section id="directory" class="directory" aria-live="polite" aria-label="Directory listings">
       <!-- Cards inserted by JS -->
     </section>
   </main>
 
-  <footer>
-    &copy; 2025 Gulu City Directory. All rights reserved.
+  <!-- Updated footer with Common Links -->
+  <footer class="responsive-footer" role="contentinfo" aria-label="Footer with common links">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Common Links</h3>
+        <a href="../Banks/index.html">Banks</a>
+        <a href="../Hospitals/index.html">Hospitals</a>
+        <a href="../Hotels/index.html">Hotels</a>
+        <a href="../Radios/index.html">Radio Stations</a>
+        <a href="../Hostels/index.html">Hostel</a>
+        <a href="../Sports/index.html">Sports Places</a>
+        <a href="../Events/index.html">Events</a>        
+        <a href="../Jobs/index.html">Jobs</a>
+        
+        
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Gulu City Directory. All rights reserved.
+    </div>
   </footer>
 
   <!-- Details Modal -->
   <div id="details-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
     <div class="modal-content">
       <h3 id="modal-title"></h3>
+      <!-- Image removed -->
       <p id="modal-desc"></p>
       <p class="info" id="modal-contact"></p>
       <p class="info" id="modal-address"></p>
-      <p id="modal-position-container">
-        <span id="modal-position"></span>
-      </p>
+      <p class="rating" id="modal-rating"></p>
       <a id="modal-url" href="#" target="_blank" class="button" style="align-self:flex-start; margin-bottom:1rem;">More Info</a>
+      <iframe id="modal-map" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <button class="back-btn" aria-label="Back to listings">Back to Listings</button>
     </div>
   </div>
 
-  <!-- Load listings from external file first -->
   <script src="listings.js"></script>
 
   <script>
-    let now = new Date();
-
     const itemsPerPage = 3;
     let currentPage = 1;
 
@@ -400,25 +462,22 @@
     const modalDesc = document.getElementById('modal-desc');
     const modalContact = document.getElementById('modal-contact');
     const modalAddress = document.getElementById('modal-address');
-    const modalPositionContainer = document.getElementById('modal-position-container');
-    const modalPosition = document.getElementById('modal-position');
+    const modalRating = document.getElementById('modal-rating');
     const modalUrl = document.getElementById('modal-url');
+    const modalMap = document.getElementById('modal-map');
     const backBtn = modal.querySelector('button.back-btn');
 
-    function isDeadlinePassed(deadlineStr) {
-      if (!deadlineStr) return false;
-      const deadlineDate = new Date(deadlineStr);
-      const deadlineZero = new Date(deadlineDate.getFullYear(), deadlineDate.getMonth(), deadlineDate.getDate());
-      const nowZero = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-      return deadlineZero < nowZero;
-    }
-
-    function createBadge(isExpired) {
-      if (isExpired) {
-        return `<span class="badge expired" aria-label="Deadline passed">Expired</span>`;
-      } else {
-        return `<span class="badge active" aria-label="Deadline active">Active</span>`;
+    function getStars(rating) {
+      const fullStars = Math.floor(rating);
+      const halfStar = rating % 1 >= 0.5;
+      let starsHtml = '';
+      for (let i = 0; i < fullStars; i++) {
+        starsHtml += '★';
       }
+      if (halfStar) {
+        starsHtml += '½';
+      }
+      return starsHtml;
     }
 
     function renderListings() {
@@ -427,13 +486,7 @@
 
       const filtered = listings.filter(item => {
         const matchesCategory = category === 'all' || item.category === category;
-        const textContent = (item.title + " " + 
-          (item.description || "") + " " + 
-          (item.jobSummary || "") + " " + 
-          (item.position || "") + " " + 
-          (item.placeOfWork || "") + " " + 
-          (item.location || "")).toLowerCase();
-        const matchesSearch = textContent.includes(searchTerm);
+        const matchesSearch = item.title.toLowerCase().includes(searchTerm) || item.description.toLowerCase().includes(searchTerm);
         return matchesCategory && matchesSearch;
       });
 
@@ -449,26 +502,18 @@
       const startIndex = (currentPage - 1) * itemsPerPage;
       const paginatedItems = filtered.slice(startIndex, startIndex + itemsPerPage);
 
-      directoryEl.innerHTML = paginatedItems.map(item => {
-        const expired = isDeadlinePassed(item.deadline);
-        const badgeHtml = createBadge(expired);
-
-        return `
+      directoryEl.innerHTML = paginatedItems.map(item => `
         <article class="card" tabindex="0" aria-label="${item.title}, ${item.category}">
           <div class="card-content">
             <h3>${item.title}</h3>
-            <p><strong>Category:</strong> ${item.category}</p>
-            <p><strong>Position:</strong> ${item.position || 'N/A'}</p>
-            <p><strong>Place of Work:</strong> ${item.placeOfWork || 'N/A'}</p>
-            <p><strong>Location:</strong> ${item.location || 'N/A'}</p>
-            <p><strong>Date Posted:</strong> ${item.datePosted || 'N/A'}</p>
-            <p><strong>Deadline:</strong> ${item.deadline || 'N/A'}</p>
-            <button class="button more-info-btn" data-id="${item.id}" aria-label="More details about ${item.title}">
-              More Info ${badgeHtml}
-            </button>
+            <p>${item.description}</p>
+            <p class="info"><strong>Contact:</strong> ${item.contact}</p>
+            <p class="info"><strong>Address:</strong> ${item.address}</p>
+            <p class="rating" aria-label="Rating: ${item.rating} out of 5">${getStars(item.rating)}</p>
+            <button class="button more-info-btn" data-id="${item.id}" aria-label="More details about ${item.title}">More Info</button>
           </div>
-        </article>`;
-      }).join('');
+        </article>
+      `).join('');
 
       let paginationHtml = '';
       if (totalPages > 1) {
@@ -510,32 +555,16 @@
       const item = listings.find(l => l.id === id);
       if (!item) return;
 
-      const expired = isDeadlinePassed(item.deadline);
-      const badgeHtml = createBadge(expired);
-
       modalTitle.textContent = item.title;
-
-      modalDesc.innerHTML = `
-        <p><strong>Category:</strong> ${item.category}</p>
-        <p id="modal-position-container">
-          <span id="modal-position">${item.position || 'N/A'}</span> 
-          ${badgeHtml}
-        </p>
-        <p><strong>Place of Work:</strong> ${item.placeOfWork || 'N/A'}</p>
-        <p><strong>Location:</strong> ${item.location || 'N/A'}</p>
-        <p><strong>Date Posted:</strong> ${item.datePosted || 'N/A'}</p>
-        <p><strong>Deadline:</strong> ${item.deadline || 'N/A'}</p>
-        <hr>
-        <p><strong>Job Summary:</strong></p>
-        <p>${item.jobSummary || item.description || 'N/A'}</p>
-      `;
-
-      modalContact.innerHTML = `<strong>Contact:</strong> ${item.contact || 'N/A'}`;
-      modalAddress.innerHTML = `<strong>Address:</strong> ${item.address || 'N/A'}`;
-
+      modalDesc.textContent = item.description;
+      modalContact.innerHTML = `<strong>Contact:</strong> ${item.contact}`;
+      modalAddress.innerHTML = `<strong>Address:</strong> ${item.address}`;
+      modalRating.textContent = `Rating: ${item.rating} ★`;
       modalUrl.href = item.url || '#';
       modalUrl.textContent = 'Visit Website';
       modalUrl.setAttribute('aria-label', `Visit website for ${item.title}`);
+      
+      modalMap.src = item.map || '';
 
       modal.style.display = 'block';
       directoryEl.style.display = 'none';
@@ -548,6 +577,7 @@
       directoryEl.style.display = '';
       paginationEl.style.display = '';
       searchForm.style.display = '';
+      modalMap.src = ''; // stop map loading
     }
 
     backBtn.addEventListener('click', hideDetails);
@@ -568,6 +598,5 @@
 
     renderListings();
   </script>
-
 </body>
 </html>
