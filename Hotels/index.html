@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" sizes="16x16" href="../ico/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../ico/favicon-16x16.png" />
   <link rel="canonical" href="https://dgulu.com/index.html" />
 
   <title>Gulu City Directory</title>
@@ -210,13 +210,13 @@
       background-color: #004080;
     }
 
-    /* Footer */
+    /* Remove old footer styles */
     footer {
-      background-color: #004080;
-      color: white;
-      text-align: center;
-      padding: 1rem 2rem;
-      font-size: 0.9rem;
+      background: none;
+      color: inherit;
+      text-align: inherit;
+      padding: 0;
+      font-size: inherit;
     }
 
     /* Responsive tweaks */
@@ -319,6 +319,52 @@
         height: 200px;
       }
     }
+
+    /* ===== New footer styles for Common Links footer ===== */
+    footer.responsive-footer {
+      background: #23272f;
+      color: #f2f2f2;
+      padding: 40px 0 20px 0;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin-top: 40px;
+    }
+    footer.responsive-footer .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    footer.responsive-footer .footer-section {
+      margin: 0 auto;
+      max-width: 600px;
+    }
+    footer.responsive-footer .footer-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: #ffcf4b;
+    }
+    footer.responsive-footer .footer-section a {
+      display: inline-block;
+      margin: 0 15px 15px 15px;
+      color: #f2f2f2;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    footer.responsive-footer .footer-section a:hover {
+      color: #ffcf4b;
+    }
+    footer.responsive-footer .footer-bottom {
+      margin-top: 40px;
+      color: #888;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 600px) {
+      footer.responsive-footer .footer-section a {
+        margin: 0 10px 12px 10px;
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -358,8 +404,26 @@
     </section>
   </main>
 
-  <footer>
-    &copy; 2025 Gulu City Directory. All rights reserved.
+  <!-- Updated footer with Common Links -->
+  <footer class="responsive-footer" role="contentinfo" aria-label="Footer with common links">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Common Links</h3>
+        <a href="../Banks/index.html">Banks</a>
+        <a href="../Hospitals/index.html">Hospitals</a>
+        <a href="../Hotels/index.html">Hotels</a>
+        <a href="../Radios/index.html">Radio Stations</a>
+        <a href="../Hostels/index.html">Hostel</a>
+        <a href="../Sports/index.html">Sports Places</a>
+        <a href="../Events/index.html">Events</a>        
+        <a href="../Jobs/index.html">Jobs</a>
+        
+        
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Gulu City Directory. All rights reserved.
+    </div>
   </footer>
 
   <!-- Details Modal -->
