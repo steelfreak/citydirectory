@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="google-adsense-account" content="ca-pub-3806440913526105">
+  <meta name="google-adsense-account" content="ca-pub-3806440913526105" />
   <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png" />
   <meta property="og:title" content="Discover Gulu City with dgulu.com" />
   <meta property="og:type" content="website" />
@@ -15,11 +15,9 @@
       crossorigin="anonymous">
   </script>
 
-
   <title>Gulu City Directory</title>
-    <meta name="description" content="Discover Gulu City with dgulu.com. Your guide to history, business, culture, and growth in Northern Uganda’s hub">
-  <!-- Other meta tags like keywords can be included, but note that keywords meta tag is less important for SEO nowadays -->
-  <meta name="keywords" content="Gulu, Gulu City, Gulu directory, Gulu services, Gulu guide, Gulu history, Gulu culture, Gulu business listings, Gulu community">
+  <meta name="description" content="Discover Gulu City with dgulu.com. Your guide to history, business, culture, and growth in Northern Uganda’s hub" />
+  <meta name="keywords" content="Gulu, Gulu City, Gulu directory, Gulu services, Gulu guide, Gulu history, Gulu culture, Gulu business listings, Gulu community" />
 
   <script type="application/ld+json">
   {
@@ -37,21 +35,18 @@
       "addressCountry": "UG"
     },
     "sameAs": [
-      "https://linkedin.com/company/dgulu"
+      "https://linkedin.com/company/dgulu",
       "www.youtube.com/@dgulucom"
-    ]
+    ],
     "logo": "https://dgulu.com/logo.png",
     "openingHours": "Mo-Su 08:00-17:00",
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "2.7724",   // Approximate latitude for Gulu
-      "longitude": "32.2881"  // Approximate longitude for Gulu
-    },
-
+      "latitude": "2.7724",
+      "longitude": "32.2881"
+    }
   }
-</script>
-
-
+  </script>
 
   <style>
     * {
@@ -214,13 +209,6 @@
     .search-bar button:hover {
       background-color: #004080;
     }
-    footer {
-      background-color: #004080;
-      color: white;
-      text-align: center;
-      padding: 1rem 2rem;
-      font-size: 0.9rem;
-    }
     @media (max-width: 600px) {
       header {
         flex-direction: column;
@@ -242,7 +230,6 @@
       .hero p {
         font-size: 1rem;
       }
-
       /* Stack search elements vertically and increase padding */
       .search-bar {
         flex-direction: column;
@@ -259,7 +246,6 @@
         font-size: 1.2rem;
       }
     }
-
     /* WhatsApp Floating Button */
     #whatsapp-button {
       position: fixed;
@@ -283,7 +269,6 @@
       transform: scale(1.1);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
-
     /* WhatsApp Chat Overlay and Dialog */
     .whatsapp-chat-overlay[hidden] {
       display: none;
@@ -415,6 +400,51 @@
       outline-offset: 2px;
       outline: none;
     }
+
+    /* ===== New footer styles for Common Links footer ===== */
+    footer.responsive-footer {
+      background: #23272f;
+      color: #f2f2f2;
+      padding: 40px 0 20px 0;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+    }
+    footer.responsive-footer .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    footer.responsive-footer .footer-section {
+      margin: 0 auto;
+      max-width: 600px;
+    }
+    footer.responsive-footer .footer-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: #ffcf4b;
+    }
+    footer.responsive-footer .footer-section a {
+      display: inline-block;
+      margin: 0 15px 15px 15px;
+      color: #f2f2f2;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    footer.responsive-footer .footer-section a:hover {
+      color: #ffcf4b;
+    }
+    footer.responsive-footer .footer-bottom {
+      margin-top: 40px;
+      color: #888;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 600px) {
+      footer.responsive-footer .footer-section a {
+        margin: 0 10px 12px 10px;
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -455,8 +485,22 @@
     </section>
   </main>
 
-  <footer>
-    &copy; 2025 Gulu City Directory. All rights reserved.
+  <!-- Updated footer with Common Links -->
+  <footer class="responsive-footer" role="contentinfo" aria-label="Footer with common links">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Common Links</h3>
+        <a href="Banks/index.html">Banks</a>
+        <a href="Hotels/index.html">Hotels</a>
+        <a href="Hostels/index.html">Hostel</a>
+        <a href="Events/index.html">Events</a>
+        <a href="Sports/index.html">Sports</a>
+        <a href="Jobs/index.html">Jobs</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Gulu City Directory. All rights reserved.
+    </div>
   </footer>
 
   <!-- WhatsApp Floating Button -->
@@ -678,9 +722,6 @@
 
       closeChat();
     });
-
-    // Optional: trap focus inside chat dialog while open
-    // (Can add more advanced keyboard handling if needed)
   </script>
 </body>
 </html>
