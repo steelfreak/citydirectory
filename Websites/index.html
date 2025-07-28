@@ -225,17 +225,17 @@
     <h2>Websites</h2>
     <div class="sidebar-search-container">
       <input type="search" id="sidebarSearch" class="sidebar-search" placeholder="Search websites..." aria-label="Search websites" autocomplete="off" />
-      <select id="sidebarCategory" class="sidebar-category-select" aria-label="Filter by category" >
+      <select id="sidebarCategory" class="sidebar-category-select" aria-label="Filter by category">
         <option value="all">All Categories</option>
-        <option value="social-media">Social Media</option>
-        <option value="search-engine">Search Engine</option>
-        <option value="places">Places</option>
-        <option value="education-reference">Education & Reference</option>
-        <option value="entertainment-streaming">Entertainment & Streaming</option>
-        <option value="e-commerce">E-commerce</option>
-        <option value="professional-networking">Professional Networking</option>
-        <option value="utilities">Utilities & Tools</option>
-        <option value="news">News</option>
+        <option value="place">Place</option>
+        <option value="tours">Tours</option>
+        <option value="university">University</option>
+        <option value="education">Education</option>
+        <option value="transport">Transport</option>
+        <option value="leisure">Leisure</option>
+        <option value="college">College</option>
+        <option value="highschool">Highschool</option>
+        <option value="info">Info</option>
       </select>
     </div>
     <ul role="list" id="sidebarList" tabindex="0">
@@ -294,7 +294,8 @@
         const li = document.createElement('li');
         li.setAttribute('tabindex', '0');
         li.setAttribute('data-url', site.url);
-        li.setAttribute('data-category', site.category);
+        // Normalize category to lowercase for consistency
+        li.setAttribute('data-category', site.category ? site.category.toLowerCase() : '');
         li.setAttribute('role', 'link');
         li.textContent = site.title;
         if(index === 0) {
@@ -342,10 +343,10 @@
       header.textContent = selectedItem.textContent || 'No website selected';
     }
 
-    // Filter sidebar list items
+    // Filter sidebar list items (case-insensitive categories)
     function filterSidebarItems() {
       const searchText = sidebarSearch.value.toLowerCase();
-      const selectedCategory = sidebarCategory.value;
+      const selectedCategory = sidebarCategory.value.toLowerCase();
       let firstVisibleItem = null;
 
       Array.from(sidebarList.children).forEach(item => {
@@ -353,7 +354,8 @@
         const websiteCategory = item.getAttribute('data-category');
 
         const matchesSearch = websiteName.includes(searchText);
-        const matchesCategory = selectedCategory === 'all' || websiteCategory === selectedCategory;
+        const matchesCategory = selectedCategory === 'all' ||
+          (websiteCategory && websiteCategory.toLowerCase() === selectedCategory);
 
         if (matchesSearch && matchesCategory) {
           item.style.display = '';
