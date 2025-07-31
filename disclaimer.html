@@ -247,11 +247,35 @@
         font-size: 1rem;
       }
     }
+
+    /*Back Button CSS*/
+    .back-button {
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-right: 1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .back-button:hover,
+    .back-button:focus {
+      text-decoration: underline;
+      color: #ffb400;
+      outline: none;
+    }
+
+
+
   </style>
 </head>
 <body>
   <header>
     <h1>Gulu City Directory</h1>
+    <a href="index.html" class="back-button" aria-label="Go back to home page" title="Home">
+      &#8592; Home
+    </a>
   </header>
 
   <section class="hero" aria-label="Gulu City introduction">
