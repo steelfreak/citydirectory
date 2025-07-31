@@ -475,6 +475,153 @@
       font-size: 0.95rem;
       text-align: center;
     }
+
+    /* ===== NEW ARTICLE SECTION STYLES ===== */
+    #gulu-article {
+      padding: 3rem 1rem;
+      background-color: #fff;
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+      border-radius: 12px;
+    }
+    #gulu-article h2 {
+      color: #004080;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: 700;
+    }
+    #gulu-article p {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: #444;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #gulu-article article {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #333;
+    }
+    #gulu-article section {
+      margin-bottom: 2rem;
+    }
+    #gulu-article h3 {
+      color: #0077cc;
+      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2rem;
+    }
+    #gulu-article section:last-child h3 {
+      color: #004080;
+      font-size: 1.75rem;
+      margin-top: 0;
+    }
+
+    /* Responsive typography */
+    @media (max-width: 600px) {
+      #gulu-article {
+        padding: 2rem 1rem;
+      }
+      #gulu-article h2 {
+        font-size: 1.6rem;
+      }
+      #gulu-article h3 {
+        font-size: 1.25rem;
+        margin-top: 1.5rem;
+      }
+      #gulu-article p {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Cookie consent banner */
+    #cookie-consent-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #222;
+      color: #fff;
+      padding: 15px 20px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 9999;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    #cookie-consent-banner.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #cookie-consent-banner p {
+      margin: 0;
+      padding-right: 10px;
+      flex: 1;
+      line-height: 1.4;
+    }
+    #cookie-consent-banner a {
+      color: #4CAF50;
+      text-decoration: underline;
+    }
+    #cookie-consent-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    #cookie-consent-banner button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 18px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    #cookie-consent-banner button:hover,
+    #cookie-consent-banner button:focus {
+      background-color: #45a049;
+      outline: none;
+    }
+    #cookie-consent-decline {
+      background-color: #777;
+    }
+    #cookie-consent-decline:hover,
+    #cookie-consent-decline:focus {
+      background-color: #555;
+    }
+
+    @media (max-width: 600px) {
+      #cookie-consent-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+      }
+      #cookie-consent-buttons {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 10px;
+      }
+      #cookie-consent-banner button {
+        flex: 1;
+        width: auto;
+      }
+    }
+
+    /* Reserve space at bottom to prevent layout shift */
+    body.cookie-banner-active {
+      padding-bottom: 70px; /* enough height for the banner */
+    }
   </style>
 </head>
 <body>
@@ -515,6 +662,78 @@
     <section id="directory" class="directory" aria-live="polite" aria-label="Directory listings">
       <!-- Cards will be inserted here by JavaScript -->
     </section>
+
+    <!-- BEGIN NEW ARTICLE SECTION -->
+    <section id="gulu-article" aria-labelledby="gulu-article-title">
+      <h2 id="gulu-article-title">Welcome to Gulu City: The Heart of Northern Uganda</h2>
+
+      <p>
+        Nestled in the rolling landscapes of Northern Uganda, Gulu City is a vibrant and fast-growing urban center rich with culture, history, and opportunity. As the largest city in the Northern Region, Gulu blends tradition and modernity, making it a must-visit destination and a hub of commerce, education, and innovation. Whether you are a visitor, entrepreneur, or new resident, this guide introduces you to the essentials that make Gulu City truly unique.
+      </p>
+
+      <article>
+        <section>
+          <h3>A Brief Overview of Gulu City</h3>
+          <p>Gulu is the administrative, commercial, and cultural capital of the Acholi sub-region. Positioned approximately 350 kilometers north of the Ugandan capital, Kampala, it serves as a gateway to the northern part of the country. Gulu Municipality was elevated to city status in 2020, a testament to its rapid growth and strategic importance.</p>
+          <p>With an estimated population of over 150,000, Gulu is a welcoming city known for its warm and friendly people, predominantly from the Acholi ethnic group. The city has bounced back remarkably from a turbulent past and is now a symbol of resilience and progress.</p>
+        </section>
+
+        <section>
+          <h3>Economic and Commercial Hub</h3>
+          <p>Gulu City serves as a major economic center in Northern Uganda. The city’s marketplace bustles with activity every day – featuring fresh produce, crafts, textiles, and electronics. Agriculture remains the backbone of the local economy, with crops like millet, maize, cassava, and sesame cultivated in rural areas, contributing significantly to trade.</p>
+          <p>The city prides itself on having a growing number of businesses ranging from small enterprises to larger companies in retail, real estate, and manufacturing. Banking services are well represented, with multiple commercial banks ensuring easy access to financial products for both individuals and businesses.</p>
+        </section>
+
+        <section>
+          <h3>Education and Health Services</h3>
+          <p>Gulu City is home to several notable educational institutions. The flagship is Gulu University, one of Uganda’s prominent public universities, offering diverse programs that attract students nationwide. The presence of vocational and technical institutes also bolsters skills development in fields like carpentry, mechanics, and computer technology.</p>
+          <p>Health facilities cater effectively to the population’s needs, with Gulu Regional Referral Hospital serving as the main medical center. Numerous private clinics and pharmacies operate in the city, enhancing healthcare accessibility for residents and visitors alike.</p>
+        </section>
+
+        <section>
+          <h3>Culture and Tourism Attractions</h3>
+          <p>Gulu is steeped in rich Acholi culture, visible through traditional dance, local crafts, and cuisine. Visitors can explore colorful markets selling part of this cultural tapestry—from intricate handmade baskets to beautifully patterned fabrics.</p>
+          <p>Nearby attractions include the Murchison Falls National Park and the enchanting Lake Albert, both accessible within a day’s journey. These destinations offer wildlife sightings, fishing, boat cruises, and opportunities for eco-tourism.</p>
+          <p>For history buffs, the Gulu War Memorial captures the city’s resilience during conflicts and serves as a poignant reminder of peace and rebuilding.</p>
+        </section>
+
+        <section>
+          <h3>Infrastructure and Transport</h3>
+          <p>The city’s roads are mostly paved and connect efficiently to neighboring towns and districts. The well-maintained Gulu Airport further improves connectivity for business travelers and tourists, offering flights to Kampala and occasional charters.</p>
+          <p>Public and private transportation options include taxis, boda-bodas (motorcycle taxis), and matatus (shared minibuses), which make commuting convenient and affordable.</p>
+        </section>
+
+        <section>
+          <h3>Accommodation and Dining</h3>
+          <p>Gulu City offers a broad range of accommodation, from budget-friendly guesthouses to mid-range hotels and lodges. This variety ensures visitors find comfortable and secure places to stay regardless of their budget.</p>
+          <p>The culinary scene is just as diverse. Traditional Acholi dishes, such as Kwaro (smoked fish) and Malakwang (greens soup), share tables with continental and Asian options. Busy restaurants and roadside cafes serve freshly brewed local coffee, a perfect treat for any time of day.</p>
+        </section>
+
+        <section>
+          <h3>Shopping and Entertainment</h3>
+          <p>For shopping enthusiasts, Gulu boasts several retail outlets and supermarkets stocking everything from fresh groceries to household goods. The city’s shopping malls are growing steadily, reflecting increasing commercial investment.</p>
+          <p>Entertainment options for residents include sports, with football being the favorite. Gulu Municipal Stadium hosts local matches and events. Nightlife is energetic, with bars and clubs offering music, dancing, and social gatherings, making the city lively after dark.</p>
+        </section>
+
+        <section>
+          <h3>Community and Social Services</h3>
+          <p>Gulu’s community spirit is palpable, with numerous NGOs, faith-based organizations, and social groups contributing to social welfare, education, and health outreach programs. This vibrant civil society enhances the quality of life and fosters inclusiveness.</p>
+        </section>
+
+        <section>
+          <h3>Why Choose Gulu?</h3>
+          <p>Whether you are considering relocation, business investment, or tourism, Gulu City offers a blend of opportunity, culture, and natural beauty. Its strategic location, improving infrastructure, and friendly atmosphere make it an ideal place to live, work, or explore.</p>
+          <p>The city’s ongoing development is evident through new residential estates, commercial centers, and urban planning initiatives designed to accommodate growth sustainably. With a youth-driven population and entrepreneurial spirit, Gulu continues to expand its role on Uganda’s economic map.</p>
+        </section>
+
+        <section>
+          <h3>In Conclusion</h3>
+          <p>Gulu City is not just a point on the map—it’s a city with heart, brimming with potential and promise. For cultural richness, business opportunities, or exploring Northern Uganda’s scenic marvels, Gulu invites you to experience its unique charm, historic resilience, and thriving community spirit. As the city grows, one thing remains constant: Gulu is a place where tradition meets progress, offering a welcoming atmosphere for all who pass through its lively streets.</p>
+        </section>
+      </article>
+    </section>
+    <!-- END NEW ARTICLE SECTION -->
+
   </main>
 
   <!-- Footer with stacked sections and link-wrapping -->
@@ -642,6 +861,18 @@
           <button type="submit" aria-label="Send message">Send</button>
         </form>
       </main>
+    </div>
+  </div>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-consent-banner" role="dialog" aria-live="polite" aria-label="Cookie consent banner" aria-modal="true" hidden>
+    <p>
+      We use cookies to improve your experience, analyze traffic, and serve personalized ads. By continuing to use this site, you consent to our cookies.
+      <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Learn more</a>.
+    </p>
+    <div id="cookie-consent-buttons">
+      <button id="cookie-consent-accept" type="button">Accept</button>
+      <button id="cookie-consent-decline" type="button">Decline</button>
     </div>
   </div>
 
@@ -827,257 +1058,71 @@
 
       closeChat();
     });
+
+    // COOKIE CONSENT BANNER SCRIPT
+    (function() {
+      const banner = document.getElementById('cookie-consent-banner');
+      const acceptBtn = document.getElementById('cookie-consent-accept');
+      const declineBtn = document.getElementById('cookie-consent-decline');
+      const consentKey = 'cookieConsentGiven';
+      const consentExpiryKey = 'cookieConsentExpiry';
+      const consentDurationDays = 365;
+
+      function setConsent(given) {
+        if (given) {
+          localStorage.setItem(consentKey, 'true');
+        } else {
+          localStorage.setItem(consentKey, 'false');
+        }
+        const expiryDate = new Date();
+        expiryDate.setDate(expiryDate.getDate() + consentDurationDays);
+        localStorage.setItem(consentExpiryKey, expiryDate.toISOString());
+        hideBanner();
+      }
+
+      function hideBanner() {
+        banner.classList.remove('show');
+        banner.setAttribute('hidden', '');
+        document.body.classList.remove('cookie-banner-active');
+      }
+
+      function showBanner() {
+        banner.removeAttribute('hidden');
+        banner.classList.add('show');
+        document.body.classList.add('cookie-banner-active');
+        // Set focus for accessibility
+        acceptBtn.focus();
+      }
+
+      function hasValidConsent() {
+        const consent = localStorage.getItem(consentKey);
+        const expiry = localStorage.getItem(consentExpiryKey);
+        if (!consent || !expiry) return false;
+        const expiryDate = new Date(expiry);
+        return (expiryDate > new Date());
+      }
+
+      function checkConsent() {
+        if (!hasValidConsent()) {
+          showBanner();
+        } else {
+          // Consent is valid; do nothing, banner stays hidden
+        }
+      }
+
+      acceptBtn.addEventListener('click', () => setConsent(true));
+      declineBtn.addEventListener('click', () => setConsent(false));
+
+      // Keyboard accessibility: allow closing banner with Escape key
+      banner.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          setConsent(false);
+        }
+      });
+
+      document.addEventListener('DOMContentLoaded', checkConsent);
+    })();
   </script>
-
-
-
-
-
-  <!-- Cookie Consent Banner -->
-<!-- <style>
-  #cookie-consent-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #222;
-    color: #fff;
-    padding: 15px 20px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 9999;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
-  }
-  #cookie-consent-banner p {
-    margin: 0;
-    padding-right: 10px;
-    flex: 1;
-  }
-  #cookie-consent-banner button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 18px;
-    text-align: center;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  #cookie-consent-banner button:hover {
-    background-color: #45a049;
-  }
-  @media (max-width: 600px) {
-    #cookie-consent-banner {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    #cookie-consent-banner button {
-      margin-top: 10px;
-      width: 100%;
-    }
-  }
-</style>
-
-//http://dgulu.com/cookie-policy.html
-//http://dgulu.com/privacy-policy.html
-
-<div id="cookie-consent-banner" role="dialog" aria-live="polite" aria-label="Cookie consent banner" style="display:none;">
-  <p>We use cookies to improve your experience, analyze traffic, and serve personalized ads. By continuing to use this site, you consent to our cookies. <a href="cookie-policy.html" style="color:#4CAF50; text-decoration:underline;">Learn more</a>.</p>
-  <button id="cookie-consent-accept">Accept</button>
-</div>
-
-<script>
-  (function() {
-    const banner = document.getElementById('cookie-consent-banner');
-    const acceptBtn = document.getElementById('cookie-consent-accept');
-    const consentKey = 'cookieConsentGiven';
-
-    function setConsent() {
-      localStorage.setItem(consentKey, 'true');
-      banner.style.display = 'none';
-    }
-
-    function checkConsent() {
-      const consent = localStorage.getItem(consentKey);
-      if (!consent) {
-        banner.style.display = 'flex';
-      }
-    }
-
-    acceptBtn.addEventListener('click', setConsent);
-
-    // Check consent status on page load
-    document.addEventListener('DOMContentLoaded', checkConsent);
-  })();
-</script> -->
-
-
-<!-- Cookie Consent Banner -->
-<style>
-  #cookie-consent-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #222;
-    color: #fff;
-    padding: 15px 20px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 9999;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-  #cookie-consent-banner.show {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  #cookie-consent-banner p {
-    margin: 0;
-    padding-right: 10px;
-    flex: 1;
-    line-height: 1.4;
-  }
-  #cookie-consent-banner a {
-    color: #4CAF50;
-    text-decoration: underline;
-  }
-  #cookie-consent-buttons {
-    display: flex;
-    gap: 10px;
-  }
-  #cookie-consent-banner button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 18px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-  #cookie-consent-banner button:hover,
-  #cookie-consent-banner button:focus {
-    background-color: #45a049;
-    outline: none;
-  }
-  #cookie-consent-decline {
-    background-color: #777;
-  }
-  #cookie-consent-decline:hover,
-  #cookie-consent-decline:focus {
-    background-color: #555;
-  }
-
-  @media (max-width: 600px) {
-    #cookie-consent-banner {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 15px;
-    }
-    #cookie-consent-buttons {
-      width: 100%;
-      justify-content: flex-start;
-      margin-top: 10px;
-    }
-    #cookie-consent-banner button {
-      flex: 1;
-      width: auto;
-    }
-  }
-
-  /* Reserve space at bottom to prevent layout shift */
-  body.cookie-banner-active {
-    padding-bottom: 70px; /* enough height for the banner */
-  }
-</style>
-
-<div id="cookie-consent-banner" role="dialog" aria-live="polite" aria-label="Cookie consent banner" aria-modal="true" hidden>
-  <p>
-    We use cookies to improve your experience, analyze traffic, and serve personalized ads. By continuing to use this site, you consent to our cookies.
-    <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Learn more</a>.
-  </p>
-  <div id="cookie-consent-buttons">
-    <button id="cookie-consent-accept" type="button">Accept</button>
-    <button id="cookie-consent-decline" type="button">Decline</button>
-  </div>
-</div>
-
-<script>
-  (function() {
-    const banner = document.getElementById('cookie-consent-banner');
-    const acceptBtn = document.getElementById('cookie-consent-accept');
-    const declineBtn = document.getElementById('cookie-consent-decline');
-    const consentKey = 'cookieConsentGiven';
-    const consentExpiryKey = 'cookieConsentExpiry';
-    const consentDurationDays = 365;
-
-    function setConsent(given) {
-      if (given) {
-        localStorage.setItem(consentKey, 'true');
-      } else {
-        localStorage.setItem(consentKey, 'false');
-      }
-      const expiryDate = new Date();
-      expiryDate.setDate(expiryDate.getDate() + consentDurationDays);
-      localStorage.setItem(consentExpiryKey, expiryDate.toISOString());
-      hideBanner();
-    }
-
-    function hideBanner() {
-      banner.classList.remove('show');
-      banner.setAttribute('hidden', '');
-      document.body.classList.remove('cookie-banner-active');
-    }
-
-    function showBanner() {
-      banner.removeAttribute('hidden');
-      banner.classList.add('show');
-      document.body.classList.add('cookie-banner-active');
-      // Set focus for accessibility
-      acceptBtn.focus();
-    }
-
-    function hasValidConsent() {
-      const consent = localStorage.getItem(consentKey);
-      const expiry = localStorage.getItem(consentExpiryKey);
-      if (!consent || !expiry) return false;
-      const expiryDate = new Date(expiry);
-      return (expiryDate > new Date());
-    }
-
-    function checkConsent() {
-      if (!hasValidConsent()) {
-        showBanner();
-      } else {
-        // Consent is valid; do nothing, banner stays hidden
-      }
-    }
-
-    acceptBtn.addEventListener('click', () => setConsent(true));
-    declineBtn.addEventListener('click', () => setConsent(false));
-
-    // Keyboard accessibility: allow closing banner with Escape key
-    banner.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        setConsent(false);
-      }
-    });
-
-    document.addEventListener('DOMContentLoaded', checkConsent);
-  })();
-</script>
-
-
-
 
 
 </body>
