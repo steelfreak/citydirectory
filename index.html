@@ -828,5 +828,257 @@
       closeChat();
     });
   </script>
+
+
+
+
+
+  <!-- Cookie Consent Banner -->
+<!-- <style>
+  #cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #222;
+    color: #fff;
+    padding: 15px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+  }
+  #cookie-consent-banner p {
+    margin: 0;
+    padding-right: 10px;
+    flex: 1;
+  }
+  #cookie-consent-banner button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  #cookie-consent-banner button:hover {
+    background-color: #45a049;
+  }
+  @media (max-width: 600px) {
+    #cookie-consent-banner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    #cookie-consent-banner button {
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+</style>
+
+//http://dgulu.com/cookie-policy.html
+//http://dgulu.com/privacy-policy.html
+
+<div id="cookie-consent-banner" role="dialog" aria-live="polite" aria-label="Cookie consent banner" style="display:none;">
+  <p>We use cookies to improve your experience, analyze traffic, and serve personalized ads. By continuing to use this site, you consent to our cookies. <a href="cookie-policy.html" style="color:#4CAF50; text-decoration:underline;">Learn more</a>.</p>
+  <button id="cookie-consent-accept">Accept</button>
+</div>
+
+<script>
+  (function() {
+    const banner = document.getElementById('cookie-consent-banner');
+    const acceptBtn = document.getElementById('cookie-consent-accept');
+    const consentKey = 'cookieConsentGiven';
+
+    function setConsent() {
+      localStorage.setItem(consentKey, 'true');
+      banner.style.display = 'none';
+    }
+
+    function checkConsent() {
+      const consent = localStorage.getItem(consentKey);
+      if (!consent) {
+        banner.style.display = 'flex';
+      }
+    }
+
+    acceptBtn.addEventListener('click', setConsent);
+
+    // Check consent status on page load
+    document.addEventListener('DOMContentLoaded', checkConsent);
+  })();
+</script> -->
+
+
+<!-- Cookie Consent Banner -->
+<style>
+  #cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #222;
+    color: #fff;
+    padding: 15px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  #cookie-consent-banner.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #cookie-consent-banner p {
+    margin: 0;
+    padding-right: 10px;
+    flex: 1;
+    line-height: 1.4;
+  }
+  #cookie-consent-banner a {
+    color: #4CAF50;
+    text-decoration: underline;
+  }
+  #cookie-consent-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  #cookie-consent-banner button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  #cookie-consent-banner button:hover,
+  #cookie-consent-banner button:focus {
+    background-color: #45a049;
+    outline: none;
+  }
+  #cookie-consent-decline {
+    background-color: #777;
+  }
+  #cookie-consent-decline:hover,
+  #cookie-consent-decline:focus {
+    background-color: #555;
+  }
+
+  @media (max-width: 600px) {
+    #cookie-consent-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+    }
+    #cookie-consent-buttons {
+      width: 100%;
+      justify-content: flex-start;
+      margin-top: 10px;
+    }
+    #cookie-consent-banner button {
+      flex: 1;
+      width: auto;
+    }
+  }
+
+  /* Reserve space at bottom to prevent layout shift */
+  body.cookie-banner-active {
+    padding-bottom: 70px; /* enough height for the banner */
+  }
+</style>
+
+<div id="cookie-consent-banner" role="dialog" aria-live="polite" aria-label="Cookie consent banner" aria-modal="true" hidden>
+  <p>
+    We use cookies to improve your experience, analyze traffic, and serve personalized ads. By continuing to use this site, you consent to our cookies.
+    <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Learn more</a>.
+  </p>
+  <div id="cookie-consent-buttons">
+    <button id="cookie-consent-accept" type="button">Accept</button>
+    <button id="cookie-consent-decline" type="button">Decline</button>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const banner = document.getElementById('cookie-consent-banner');
+    const acceptBtn = document.getElementById('cookie-consent-accept');
+    const declineBtn = document.getElementById('cookie-consent-decline');
+    const consentKey = 'cookieConsentGiven';
+    const consentExpiryKey = 'cookieConsentExpiry';
+    const consentDurationDays = 365;
+
+    function setConsent(given) {
+      if (given) {
+        localStorage.setItem(consentKey, 'true');
+      } else {
+        localStorage.setItem(consentKey, 'false');
+      }
+      const expiryDate = new Date();
+      expiryDate.setDate(expiryDate.getDate() + consentDurationDays);
+      localStorage.setItem(consentExpiryKey, expiryDate.toISOString());
+      hideBanner();
+    }
+
+    function hideBanner() {
+      banner.classList.remove('show');
+      banner.setAttribute('hidden', '');
+      document.body.classList.remove('cookie-banner-active');
+    }
+
+    function showBanner() {
+      banner.removeAttribute('hidden');
+      banner.classList.add('show');
+      document.body.classList.add('cookie-banner-active');
+      // Set focus for accessibility
+      acceptBtn.focus();
+    }
+
+    function hasValidConsent() {
+      const consent = localStorage.getItem(consentKey);
+      const expiry = localStorage.getItem(consentExpiryKey);
+      if (!consent || !expiry) return false;
+      const expiryDate = new Date(expiry);
+      return (expiryDate > new Date());
+    }
+
+    function checkConsent() {
+      if (!hasValidConsent()) {
+        showBanner();
+      } else {
+        // Consent is valid; do nothing, banner stays hidden
+      }
+    }
+
+    acceptBtn.addEventListener('click', () => setConsent(true));
+    declineBtn.addEventListener('click', () => setConsent(false));
+
+    // Keyboard accessibility: allow closing banner with Escape key
+    banner.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        setConsent(false);
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', checkConsent);
+  })();
+</script>
+
+
+
+
+
 </body>
 </html>
