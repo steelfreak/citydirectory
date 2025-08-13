@@ -63,7 +63,7 @@
       line-height: 1.6;
     }
     a {
-      color: #0077cc;
+      color: #ffffff;
       text-decoration: none;
     }
     a:hover {
@@ -580,7 +580,9 @@
 <body>
 
   <header>
-    <h1>Gulu City Directory</h1>
+    <a href="../index.html" class="back-link" aria-label="Go back to home page">
+      <h1>Gulu City Directory</h1>
+    </a>
   </header>
 
   <section class="hero" aria-label="Gulu City introduction">
@@ -761,7 +763,7 @@
 
   <script>
     /* --- Directory Listing Pagination and Modal --- */
-    const itemsPerPage = 3;
+    const itemsPerPage = 6;
     let currentPage = 1;
 
     const directoryEl = document.getElementById('directory');
