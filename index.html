@@ -674,6 +674,37 @@
     body.cookie-banner-active {
       padding-bottom: 70px; /* enough height for the banner */
     }
+
+/* Responsiveness Div */
+      .container-response {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #f0f0f0;
+  }
+  .responsive-div {
+    flex: 1 1 300px; /* Responsive width - minimum 300px */
+    background-color: lightblue;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  /* Optional: Adjust layout for smaller screens */
+  @media (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+    .responsive-div {
+      flex-basis: 100%; /* Full width on small screens */
+    }
+  }
+    
   </style>
 
   <!-- Adsterra -->
@@ -732,11 +763,19 @@
       <p>Your comprehensive guide to businesses, attractions, events, and services in Gulu, Uganda.</p>
     </div>
   </section>
-
-  <!-- kakumba -->
+  <div class="container-response">
+  <div class="responsive-div">Responsive Div 1
+      <!-- kakumba -->
   <!-- Revive Adserver Asynchronous JS Tag - Generated with Revive Adserver v6.0.3 -->
 <ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-id="4cc62fa11eff27d8aeb796be9a76599e"></ins>
 <script async src="//ads.hfimug.org/r/www/delivery/asyncjs.php"></script>
+  
+  </div>
+  <!-- <div class="responsive-div">Responsive Div 2</div>
+  <div class="responsive-div">Responsive Div 3</div> -->
+</div>
+
+
 
   <!-- Ads from ewinsoft -->
 
@@ -1265,6 +1304,7 @@
 
 </body>
 </html>
+
 
 
 
