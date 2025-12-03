@@ -143,9 +143,33 @@
 
 
 
-if (window.innerWidth < 768){
-  window.location = "mobile.html";
 
-} else if (window.innerWidth < 1024) {
-  window.location = "tablet.html";
-}
+
+
+        // Show popup only on mobile/tablet screens
+        function showPopupOnMobileTablet() {
+            const width = window.innerWidth;
+            if (width < 1024) { // Adjust as needed (common tablet max width)
+                document.getElementById('popupOverlay').style.display = 'flex';
+            }
+        }
+
+        // Call function when page loads
+        window.onload = showPopupOnMobileTablet;
+
+        function redirectToDevice() {
+            const device = document.getElementById('deviceSelect').value;
+            if (device === 'mobile') {
+                window.location.href = 'mobile.html';
+            } else if (device === 'tablet') {
+                window.location.href = 'tablet.html';
+            }
+        }
+
+
+
+
+
+
+
+
