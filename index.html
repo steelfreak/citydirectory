@@ -35,15 +35,6 @@
 
 
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DTX6YM6MZH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DTX6YM6MZH');
-</script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -56,9 +47,6 @@
   <meta property="og:description" content="Explore Gulu’s history, culture, business listings, and jobs with dgulu.com, your comprehensive guide to Gulu City." />
 
 
-  <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-</script>
 
 
   <meta name="keywords" content="Gulu, Gulu City, Gulu directory, Gulu services, Gulu guide, Gulu history, Gulu culture, Gulu business listings, Gulu community" />
@@ -99,6 +87,21 @@
 
 </head>
 <body>
+
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <h2>Select Your Device</h2>
+            <select id="deviceSelect">
+                <option value="mobile">Mobile</option>
+                <option value="tablet">Tablet</option>
+            </select>
+            <button onclick="redirectToDevice()">Go</button>
+        </div>
+    </div>
+
+
+
   
   <header>
     <h1>Gulu City Directory</h1>
@@ -130,16 +133,6 @@
   <section class="hero" aria-label="Gulu City introduction">
     <div class="hero-content">
       <h2>Discover Gulu City</h2>
-
-
-      <div id="ezoic-pub-ad-placeholder-101"></div>
-      <script>
-          ezstandalone.cmd.push(function () {
-              ezstandalone.showAds(101);
-          });
-      </script>
-
-
 
 
 
