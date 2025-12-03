@@ -3,6 +3,8 @@
 <head>
 
 
+
+
   <title>Gulu City Directory | Local Business & Services Guide - dgulu.com</title>
   <meta name="description" content="Welcome to Gulu City Directory (dgulu.com) – your comprehensive guide to local businesses, services, community resources, events, and more in Gulu and Northern Uganda. Find trusted contacts, detailed listings, and up-to-date information to connect with everything Gulu has to offer.">
   <meta name="keywords" content="Gulu City Directory, dgulu.com, local business directory Gulu, Gulu city services, Gulu community resources, Northern Uganda directory, Gulu events, Gulu tourism, Gulu transport, Gulu healthcare, Gulu education">
@@ -24,6 +26,9 @@
   <meta name="twitter:title" content="Gulu City Directory - Your Local Guide to Gulu | dgulu.com">
   <meta name="twitter:description" content="Explore the most trusted directory for Gulu City including businesses, services, events, and community resources. Stay connected and informed with dgulu.com.">
   <meta name="twitter:image" content="https://dgulu.com/logo.png">
+
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script type="text/javascript" src="myscript.js"></script>
 
 
 
@@ -55,11 +60,7 @@
         src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
 </script>
 
-  <!-- <title>Gulu City Directory</title> -->
-  <!-- <title>Welcome to The Gulu City Directory</title> -->
-  <!-- <h1>Welcome to <span class="highlight">The Gulu City Directory</span></h1> -->
-  <!-- <meta name="description" content="Discover Gulu City with dgulu.com. Your guide to history, business, culture, and growth in Northern Uganda’s hub" /> -->
-  <!-- <meta name="description" content="Discover the best of Gulu City with dgulu.com—your ultimate guide to Northern Uganda’s vibrant hub. Explore local history, diverse culture, tourist attractions, business opportunities, jobs, services, community life, events, and more. Plan your visit, learn about local businesses and institutions, and experience the progress and charm of Gulu today." /> -->
+
   <meta name="keywords" content="Gulu, Gulu City, Gulu directory, Gulu services, Gulu guide, Gulu history, Gulu culture, Gulu business listings, Gulu community" />
   
 
@@ -96,628 +97,12 @@
 
 
 
-  <style>
-    /* General styles */
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #f9fafb;
-      color: #333;
-      line-height: 1.6;
-    }
-    .directory {
-      max-width: 1200px;
-      margin: 0 auto 4rem;
-      padding: 0 1rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.75rem;
-    }
-    .card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
-    }
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
-    .card-content {
-      padding: 1rem 1.25rem 1.5rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .card-content h3 {
-      margin: 1rem 0 1.5rem 0;
-      font-size: 1.15rem;
-      color: #004080;
-      text-align: center;
-      font-weight: 600;
-    }
-    .card-content .button {
-      background-color: #0077cc;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      font-weight: 600;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      font-size: 1rem;
-      display: inline-block;
-    }
-    .card-content .button:hover {
-      background-color: #004080;
-    }
-    header {
-      background-color: #004080;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-      font-weight: 700;
-    }
-    nav {
-      margin-top: 0.5rem;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      font-weight: 600;
-      font-size: 1rem;
-      color: #fff;
-      text-decoration: none;
-    }
-    nav a:first-child {
-      margin-left: 0;
-    }
-    nav a:hover {
-      text-decoration: underline;
-      color: #ffb400;
-    }
-    .hero {
-      background: url('index.jpg') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 5rem 1rem;
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 64, 128, 0.6);
-      z-index: 0;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .hero h2 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 1.5rem;
-    }
-    .search-bar {
-      max-width: 500px;
-      margin: 0 auto 3rem;
-      display: flex;
-      gap: 0.75rem;
-    }
-    .search-bar input,
-    .search-bar select {
-      flex: 1;
-      padding: 1rem 1rem;
-      font-size: 1.2rem;
-      border: 2px solid #0077cc;
-      border-radius: 5px;
-      outline-offset: 2px;
-      transition: border-color 0.3s ease;
-    }
-    .search-bar input:focus,
-    .search-bar select:focus {
-      border-color: #004080;
-    }
-    .search-bar button {
-      background-color: #0077cc;
-      border: none;
-      color: white;
-      padding: 1rem 1.5rem;
-      font-size: 1.1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .search-bar button:hover {
-      background-color: #004080;
-    }
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        margin-top: 1rem;
-        width: 100%;
-      }
-      nav a {
-        margin-left: 0;
-        margin-right: 1rem;
-        display: inline-block;
-        font-size: 1.1rem;
-      }
-      .hero h2 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-      /* Stack search elements vertically and increase padding */
-      .search-bar {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .search-bar input,
-      .search-bar select,
-      .search-bar button {
-        width: 100%;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        font-size: 1.2rem;
-      }
-    }
-
-    /* WhatsApp Floating Button */
-    #whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: white;
-      border-radius: 50%;
-      width: 56px;
-      height: 56px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      transition: transform 0.2s ease;
-    }
-    #whatsapp-button:focus,
-    #whatsapp-button:hover {
-      outline: none;
-      transform: scale(1.1);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    /* WhatsApp Chat Overlay and Dialog */
-    .whatsapp-chat-overlay[hidden] {
-      display: none;
-    }
-    .whatsapp-chat-overlay:not([hidden]) {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.3);
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
-      padding: 1rem;
-      z-index: 1001;
-      cursor: pointer;
-    }
-    .whatsapp-chat {
-      background: white;
-      width: 320px;
-      max-width: 100%;
-      border-radius: 16px 16px 0 0;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-      max-height: 80vh;
-      cursor: default;
-    }
-    /* Center chat box on small screens */
-    @media (max-width: 480px) {
-      .whatsapp-chat-overlay:not([hidden]) {
-        justify-content: center;
-        align-items: center;
-      }
-      .whatsapp-chat {
-        width: 90vw;
-        max-height: 90vh;
-        border-radius: 12px;
-      }
-    }
-    .whatsapp-chat header {
-      background: #25d366;
-      color: white;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 16px 16px 0 0;
-    }
-    .whatsapp-chat header h2 {
-      margin: 0;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-    .whatsapp-chat header button {
-      background: transparent;
-      border: none;
-      color: white;
-      font-size: 1.75rem;
-      cursor: pointer;
-      font-weight: 700;
-      line-height: 1;
-      padding: 0;
-      margin: 0;
-      width: 36px;
-      height: 36px;
-    }
-    .whatsapp-chat header button:focus-visible {
-      outline: 2px solid #004080;
-      outline-offset: 2px;
-      border-radius: 4px;
-    }
-    .whatsapp-chat main {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      padding: 1rem;
-      background: #f7f7f7;
-    }
-    .chat-messages {
-      flex-grow: 1;
-      overflow-y: auto;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-      color: #222;
-    }
-    .chat-message {
-      margin-bottom: 0.5rem;
-      padding: 0.5rem 0.75rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-      max-width: 80%;
-      word-wrap: break-word;
-    }
-    .chat-message.user {
-      background: #dcf8c6;
-      align-self: flex-end;
-    }
-    #chat-form {
-      display: flex;
-      gap: 0.5rem;
-    }
-    #chat-input {
-      flex-grow: 1;
-      padding: 0.6rem 0.8rem;
-      font-size: 1rem;
-      border-radius: 9999px;
-      border: 1px solid #ccc;
-      outline-offset: 2px;
-    }
-    #chat-input:focus {
-      border-color: #25d366;
-      outline: none;
-      box-shadow: 0 0 4px #25d366;
-    }
-    #chat-form button {
-      background-color: #25d366;
-      color: white;
-      border: none;
-      padding: 0 1rem;
-      border-radius: 9999px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-    }
-    #chat-form button:hover,
-    #chat-form button:focus-visible {
-      background-color: #20b858;
-      outline-offset: 2px;
-      outline: none;
-    }
-
-    /* ===== Footer styles with stacked vertical layout and wrapping links ===== */
-    footer.responsive-footer {
-      background: #23272f;
-      color: #f2f2f2;
-      padding: 40px 20px 20px 20px;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-    }
-    footer.responsive-footer .footer-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-      display: block; /* stacked layout always */
-      text-align: center;
-    }
-    footer.responsive-footer .footer-social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-bottom: 30px;
-      flex-basis: 100%;
-    }
-    footer.responsive-footer .social-icon-link svg {
-      width: 40px;
-      height: 40px;
-      transition: transform 0.2s, filter 0.2s;
-      display: block;
-      cursor: pointer;
-      outline: none;
-    }
-    footer.responsive-footer .social-icon-link:focus svg,
-    footer.responsive-footer .social-icon-link:hover svg {
-      transform: scale(1.12) rotate(-7deg);
-      filter: brightness(1.2);
-      outline: none;
-    }
-    footer.responsive-footer .footer-section {
-      max-width: none;
-      margin: 0 auto 40px auto;
-      text-align: center;
-    }
-    footer.responsive-footer .footer-section h3 {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      color: #ffcf4b;
-    }
-    footer.responsive-footer .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px 20px; /* vertical gap 12px, horizontal gap 20px */
-      padding: 0;
-      margin: 0 auto;
-      list-style: none;
-    }
-    footer.responsive-footer .footer-links a {
-      padding: 2px 6px;
-      font-size: 1rem;
-      color: #f2f2f2;
-      text-decoration: none;
-      white-space: nowrap; /* prevents breaking inside words */
-      transition: color 0.2s;
-      display: inline-block;
-    }
-    footer.responsive-footer .footer-links a:hover,
-    footer.responsive-footer .footer-links a:focus {
-      color: #ffcf4b;
-      outline: none;
-    }
-    footer.responsive-footer .footer-bottom {
-      margin-top: 40px;
-      color: #888;
-      font-size: 0.95rem;
-      text-align: center;
-    }
-
-    /* ===== NEW ARTICLE SECTION STYLES ===== */
-    #gulu-article {
-      padding: 3rem 1rem;
-      background-color: #fff;
-      max-width: 1200px;
-      margin: 0 auto 4rem;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
-      border-radius: 12px;
-    }
-    #gulu-article h2 {
-      color: #004080;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      font-weight: 700;
-    }
-    #gulu-article p {
-      font-size: 1.125rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      color: #444;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #gulu-article article {
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #333;
-    }
-    #gulu-article section {
-      margin-bottom: 2rem;
-    }
-    #gulu-article h3 {
-      color: #0077cc;
-      margin-bottom: 0.75rem;
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-top: 2rem;
-    }
-    #gulu-article section:last-child h3 {
-      color: #004080;
-      font-size: 1.75rem;
-      margin-top: 0;
-    }
-
-    /* Responsive typography */
-    @media (max-width: 600px) {
-      #gulu-article {
-        padding: 2rem 1rem;
-      }
-      #gulu-article h2 {
-        font-size: 1.6rem;
-      }
-      #gulu-article h3 {
-        font-size: 1.25rem;
-        margin-top: 1.5rem;
-      }
-      #gulu-article p {
-        font-size: 0.95rem;
-      }
-    }
-
-    /* Cookie consent banner */
-    #cookie-consent-banner {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: #222;
-      color: #fff;
-      padding: 15px 20px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 9999;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    #cookie-consent-banner.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    #cookie-consent-banner p {
-      margin: 0;
-      padding-right: 10px;
-      flex: 1;
-      line-height: 1.4;
-    }
-    #cookie-consent-banner a {
-      color: #4CAF50;
-      text-decoration: underline;
-    }
-    #cookie-consent-buttons {
-      display: flex;
-      gap: 10px;
-    }
-    #cookie-consent-banner button {
-      background-color: #4CAF50;
-      border: none;
-      color: white;
-      padding: 10px 18px;
-      font-size: 14px;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-    #cookie-consent-banner button:hover,
-    #cookie-consent-banner button:focus {
-      background-color: #45a049;
-      outline: none;
-    }
-    #cookie-consent-decline {
-      background-color: #777;
-    }
-    #cookie-consent-decline:hover,
-    #cookie-consent-decline:focus {
-      background-color: #555;
-    }
-
-    @media (max-width: 600px) {
-      #cookie-consent-banner {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px;
-      }
-      #cookie-consent-buttons {
-        width: 100%;
-        justify-content: flex-start;
-        margin-top: 10px;
-      }
-      #cookie-consent-banner button {
-        flex: 1;
-        width: auto;
-      }
-    }
-
-    /* Reserve space at bottom to prevent layout shift */
-    body.cookie-banner-active {
-      padding-bottom: 70px; /* enough height for the banner */
-    }
-
-/* Responsiveness Div */
-      .container-response {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-    /* background-color: #f0f0f0; */
-  }
-  .responsive-div {
-    flex: 1 1 300px; /* Responsive width - minimum 300px */
-    /* background-color: lightblue; */
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 8px;
-    text-align: center;
-  }
-
-  /* Optional: Adjust layout for smaller screens */
-  @media (max-width: 600px) {
-    .container {
-      padding: 10px;
-    }
-    .responsive-div {
-      flex-basis: 100%; /* Full width on small screens */
-    }
-  }
-    
-  </style>
-
-  <!-- Adsterra -->
-
-  <!-- <script type='text/javascript' src='//pl27419301.profitableratecpm.com/37/ba/cd/37bacd142cf149a9a3d0425e50264c7a.js'></script> -->
 </head>
 <body>
-  <amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-3806440913526105">
-  </amp-auto-ads>
+  
   <header>
     <h1>Gulu City Directory</h1>
-    <!-- <h1>Welcome to <span class="highlight">The Gulu City Directory</span></h1> -->
+   
 
     <nav>
 <!--       <a href="#businesses">Businesses</a>
@@ -742,11 +127,6 @@
     </nav>
   </header>
 
-   
-
-
-
-  
   <section class="hero" aria-label="Gulu City introduction">
     <div class="hero-content">
       <h2>Discover Gulu City</h2>
@@ -769,38 +149,6 @@
     </div>
   </section>
 
-
-            <div class="container-response">
-          <div class="responsive-div">
-              <!-- kakumba2 -->
-                    <!-- Revive Adserver Asynchronous JS Tag - Generated with Revive Adserver v6.0.3 -->
-                    <ins data-revive-zoneid="8" data-revive-id="4cc62fa11eff27d8aeb796be9a76599e"></ins>
-                    <script async src="//ads.hfimug.org/r/www/delivery/asyncjs.php"></script>
-          
-          </div>
-        </div>
-
-
-
-
-  
-  <div class="container-response">
-  <div class="responsive-div">
-      <!-- kakumba -->
-  <!-- Revive Adserver Asynchronous JS Tag - Generated with Revive Adserver v6.0.3 -->
-<ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-id="4cc62fa11eff27d8aeb796be9a76599e"></ins>
-<script async src="//ads.hfimug.org/r/www/delivery/asyncjs.php"></script>
-  
-  </div>
-  <!-- <div class="responsive-div">Responsive Div 2</div>
-  <div class="responsive-div">Responsive Div 3</div> -->
-</div>
-
-
-
-  <!-- Ads from ewinsoft -->
-
- <!--  <div class='MainAdverTiseMentDiv' data-publisher="eyJpdiI6ImJHcmUwUzVSM29mUUZqbDNxV1JFR0E9PSIsInZhbHVlIjoiVEdhMFR6SUNGSGJVdXdFRWt3bzM2QT09IiwibWFjIjoiZjNhYzA4MDAyMTliYWZiZmU0ODkwYTlkOGZmYWVmODYzYTRiODk1NzkwNzI0MDMwYzU2NTM5M2U5OTEwMDVjNSIsInRhZyI6IiJ9" data-adsize="400x400"></div><script class="adScriptClass" src="https://ads.ewinsofts.com/assets/ads/ad.js"></script> -->
 
   <section aria-label="Search directory" style="padding: 2rem 1rem 0;">
     <form class="search-bar" id="search-form" onsubmit="return false;">
@@ -834,24 +182,8 @@
         Nestled in the rolling landscapes of Northern Uganda, Gulu City is a vibrant and fast-growing urban center rich with culture, history, and opportunity. As the largest city in the Northern Region, Gulu blends tradition and modernity, making it a must-visit destination and a hub of commerce, education, and innovation. Whether you are a visitor, entrepreneur, or new resident, this guide introduces you to the essentials that make Gulu City truly unique.
       </p>
 
-      <article>
+<!--       <article>
         <section>
-
-
-          <div class="container-response">
-          <div class="responsive-div">
-              <!-- kakumba2 -->
-                    <!-- Revive Adserver Asynchronous JS Tag - Generated with Revive Adserver v6.0.3 -->
-                    <ins data-revive-zoneid="8" data-revive-id="4cc62fa11eff27d8aeb796be9a76599e"></ins>
-                    <script async src="//ads.hfimug.org/r/www/delivery/asyncjs.php"></script>
-          
-          </div>
-        </div>
-
-
-
-
-          
           <h3>A Brief Overview of Gulu City</h3>
           <p>Gulu is the administrative, commercial, and cultural capital of the Acholi sub-region. Positioned approximately 350 kilometers north of the Ugandan capital, Kampala, it serves as a gateway to the northern part of the country. Gulu Municipality was elevated to city status in 2020, a testament to its rapid growth and strategic importance.</p>
           <p>With an estimated population of over 150,000, Gulu is a welcoming city known for its warm and friendly people, predominantly from the Acholi ethnic group. The city has bounced back remarkably from a turbulent past and is now a symbol of resilience and progress.</p>
@@ -909,7 +241,7 @@
           <h3>In Conclusion</h3>
           <p>Gulu City is not just a point on the map—it’s a city with heart, brimming with potential and promise. For cultural richness, business opportunities, or exploring Northern Uganda’s scenic marvels, Gulu invites you to experience its unique charm, historic resilience, and thriving community spirit. As the city grows, one thing remains constant: Gulu is a place where tradition meets progress, offering a welcoming atmosphere for all who pass through its lively streets.</p>
         </section>
-      </article>
+      </article> -->
     </section>
     <!-- END NEW ARTICLE SECTION -->
 
@@ -948,7 +280,7 @@
       </div>
 
       <!-- Common Links -->
-      <div class="footer-section">
+<!--       <div class="footer-section">
         <h3>Common Links</h3>
         <div class="footer-links" aria-label="Common site links">
           <a href="Banks/index.html">Banks</a>
@@ -957,9 +289,9 @@
           <a href="Radios/index.html">Radio Stations</a>
           <a href="Hostels/index.html">Hostel</a>
           <a href="Sports/index.html">Sports Places</a>
-          <a href="Events/index.html">Events</a>        
+          <a href="Events/index.html">Events</a>  -->       
           <!-- <a href="Jobs/index.html">Jobs</a> -->
-          <a href="privacy-policy.html">Privacy Policy</a>
+<!--           <a href="privacy-policy.html">Privacy Policy</a>
           <a href="terms-and-conditions.html">Terms and Conditions</a>
           <a href="about-us.html">About Us</a>
           <a href="contact-us.html">Contact Us</a>
@@ -967,7 +299,7 @@
           <a href="cookie-policy.html">Cookie Consent/Policy</a>
           <a href="faq.html">FAQ's</a>
         </div>
-      </div>
+      </div> -->
 
       <!-- Site Map -->
       <div class="footer-section" aria-label="Site map links">
@@ -1056,151 +388,14 @@
   </div>
 
   <script>
-    const listings = [
-      {
-        id: 1,
-        title: 'Banks',
-        image: 'Banks/index.jpg',
-        url: 'Banks/index.html',
-        category: 'business',
-        description: '',
-      },
-      {
-        id: 2,
-        title: 'Hospitals',
-        image: 'Hospitals/index.jpg',
-        url: 'Hospitals/index.html',
-        category: 'service',
-        description: '',
-      },
-      {
-        id: 3,
-        title: 'Hotels',
-        image: 'Hotels/index.jpg',
-        url: 'Hotels/index.html',
-        category: 'business',
-        description: '',
-      },
-      {
-        id: 4,
-        title: 'Radio Stations',
-        image: 'Radios/index.jpg',
-        url: 'Radios/index.html',
-        category: 'service',
-        description: '',
-      },
-      {
-        id: 5,
-        title: 'Hostels',
-        image: 'Hostels/index.jpg',
-        url: 'Hostels/index.html',
-        category: 'attraction',
-        description: '',
-      },
-      {
-        id: 6,
-        title: 'Sports Places',
-        image: 'Sports/index.jpg',
-        url: 'Sports/index.html',
-        category: 'attraction',
-        description: '',
-      },
-      {
-        id: 7,
-        title: 'Events & Tour Sites',
-        image: 'Events/index.jpg',
-        url: 'Events/index.html',
-        category: 'event',
-        description: '',
-      },
-      // {
-      //   id: 8,
-      //   title: 'Career / Jobs',
-      //   image: 'Jobs/index.jpg',
-      //   url: 'Jobs/index.html',
-      //   category: 'Jobs',
-      //   description: '',
-      // },
-      {
-        id: 9,
-        title: 'Websites',
-        image: 'Websites/index.jpg',
-        url: 'Websites/index.html',
-        category: 'Websites',
-        description: '',
-      },
-      {
-        id: 10,
-        title: 'Worship Places',
-        image: 'Worship/index.jpg',
-        url: 'Worship/index.html',
-        category: 'Worship',
-        description: '',
-      },
-      {
-        id: 11,
-        title: 'Transport',
-        image: 'Transport/index.jpg',
-        url: 'Transport/index.html',
-        category: 'Transport',
-        description: '',
-      },
-      {
-        id: 12,
-        title: 'Coperatives',
-        image: 'Coperatives/index.jpg',
-        url: 'Coperatives/index.html',
-        category: 'Coperatives',
-        description: '',
-      },
-      {
-        id: 13,
-        title: 'Waste-mgt',
-        image: 'Waste-mgt/index.jpg',
-        url: 'Waste-mgt/index.html',
-        category: 'Waste-mgt',
-        description: '',
-      }
-    ];
+
 
     const directoryEl = document.getElementById('directory');
     const searchInput = document.getElementById('search-input');
     const categoryFilter = document.getElementById('category-filter');
     const searchForm = document.getElementById('search-form');
 
-    function renderListings() {
-      const searchTerm = searchInput.value.toLowerCase();
-      const category = categoryFilter.value;
 
-      const filtered = listings.filter((item) => {
-        const matchesCategory = category === 'all' || item.category === category;
-        const desc = item.description || '';
-        const matchesSearch =
-          item.title.toLowerCase().includes(searchTerm) ||
-          desc.toLowerCase().includes(searchTerm);
-        return matchesCategory && matchesSearch;
-      });
-
-      if (filtered.length === 0) {
-        directoryEl.innerHTML =
-          '<p style="grid-column: 1/-1; text-align:center; font-size:1.2rem; color:#666;">No listings found.</p>';
-        return;
-      }
-
-      directoryEl.innerHTML = filtered
-        .map(
-          (item) => `
-        <article class="card">
-          <img src="${item.image}" alt="${item.title}" />
-          <div class="card-content">
-            <h3>${item.title}</h3>
-            <a class="button" href="${item.url}">More Info</a>
-          </div>
-        </article>
-      `
-        )
-        .join('');
-    }
 
     renderListings();
 
@@ -1335,24 +530,7 @@
     })();
   </script>
 
-  <!-- Social Banner Ad -->
-  <script type='text/javascript' src='//chickenadjacent.com/37/0c/a6/370ca6e2357677920ffe271975cfb86a.js'></script>
-
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

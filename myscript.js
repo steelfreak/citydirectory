@@ -1,0 +1,151 @@
+    const listings = [
+      {
+        id: 1,
+        title: 'Banks',
+        image: 'Banks/index.jpg',
+        url: 'Banks/index.html',
+        category: 'business',
+        description: '',
+      },
+      {
+        id: 2,
+        title: 'Hospitals',
+        image: 'Hospitals/index.jpg',
+        url: 'Hospitals/index.html',
+        category: 'service',
+        description: '',
+      },
+      {
+        id: 3,
+        title: 'Hotels',
+        image: 'Hotels/index.jpg',
+        url: 'Hotels/index.html',
+        category: 'business',
+        description: '',
+      },
+      {
+        id: 4,
+        title: 'Radio Stations',
+        image: 'Radios/index.jpg',
+        url: 'Radios/index.html',
+        category: 'service',
+        description: '',
+      },
+      {
+        id: 5,
+        title: 'Hostels',
+        image: 'Hostels/index.jpg',
+        url: 'Hostels/index.html',
+        category: 'attraction',
+        description: '',
+      },
+      {
+        id: 6,
+        title: 'Sports Places',
+        image: 'Sports/index.jpg',
+        url: 'Sports/index.html',
+        category: 'attraction',
+        description: '',
+      },
+      {
+        id: 7,
+        title: 'Events & Tour Sites',
+        image: 'Events/index.jpg',
+        url: 'Events/index.html',
+        category: 'event',
+        description: '',
+      },
+      // {
+      //   id: 8,
+      //   title: 'Career / Jobs',
+      //   image: 'Jobs/index.jpg',
+      //   url: 'Jobs/index.html',
+      //   category: 'Jobs',
+      //   description: '',
+      // },
+      {
+        id: 9,
+        title: 'Websites',
+        image: 'Websites/index.jpg',
+        url: 'Websites/index.html',
+        category: 'Websites',
+        description: '',
+      },
+      {
+        id: 10,
+        title: 'Worship Places',
+        image: 'Worship/index.jpg',
+        url: 'Worship/index.html',
+        category: 'Worship',
+        description: '',
+      },
+      {
+        id: 11,
+        title: 'Transport',
+        image: 'Transport/index.jpg',
+        url: 'Transport/index.html',
+        category: 'Transport',
+        description: '',
+      },
+      {
+        id: 12,
+        title: 'Coperatives',
+        image: 'Coperatives/index.jpg',
+        url: 'Coperatives/index.html',
+        category: 'Coperatives',
+        description: '',
+      },
+      {
+        id: 13,
+        title: 'Waste-mgt',
+        image: 'Waste-mgt/index.jpg',
+        url: 'Waste-mgt/index.html',
+        category: 'Waste-mgt',
+        description: '',
+      }
+    ];
+
+
+
+    function renderListings() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const category = categoryFilter.value;
+
+      const filtered = listings.filter((item) => {
+        const matchesCategory = category === 'all' || item.category === category;
+        const desc = item.description || '';
+        const matchesSearch =
+          item.title.toLowerCase().includes(searchTerm) ||
+          desc.toLowerCase().includes(searchTerm);
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        directoryEl.innerHTML =
+          '<p style="grid-column: 1/-1; text-align:center; font-size:1.2rem; color:#666;">No listings found.</p>';
+        return;
+      }
+
+      directoryEl.innerHTML = filtered
+        .map(
+          (item) => `
+        <article class="card">
+          <img src="${item.image}" alt="${item.title}" />
+          <div class="card-content">
+            <h3>${item.title}</h3>
+            <a class="button" href="${item.url}">More Info</a>
+          </div>
+        </article>
+      `
+        )
+        .join('');
+    }
+
+
+
+if (window.innerWidth < 768){
+  window.location = "mobile.html";
+
+} else if (window.innerWidth < 1024) {
+  window.location = "tablet.html";
+}
