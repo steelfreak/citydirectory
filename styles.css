@@ -575,3 +575,33 @@
     body.cookie-banner-active {
       padding-bottom: 70px; /* enough height for the banner */
     }
+
+
+
+
+
+/*POPUp*/
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+        }
+        .popup select, .popup button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+        }
