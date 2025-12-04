@@ -147,9 +147,19 @@
 
 
         // Show popup only on mobile/tablet screens
+        // function showPopupOnMobileTablet() {
+        //     const width = window.innerWidth;
+        //     if (width < 1024) { // Adjust as needed (common tablet max width)
+        //         document.getElementById('popupOverlay').style.display = 'flex';
+        //     }
+        // }
+
+
+
+        // Show popup only on PC/TV/tablet screens
         function showPopupOnMobileTablet() {
             const width = window.innerWidth;
-            if (width < 1024) { // Adjust as needed (common tablet max width)
+            if (width >= 768) { // 768 and wider - not mobile
                 document.getElementById('popupOverlay').style.display = 'flex';
             }
         }
@@ -159,10 +169,10 @@
 
         function redirectToDevice() {
             const device = document.getElementById('deviceSelect').value;
-            if (device === 'mobile') {
-                window.location.href = 'mobile.html';
-            } else if (device === 'tablet') {
+            if (device === 'tablet') {
                 window.location.href = 'tablet.html';
+            } else if (device === 'pc') {
+                window.location.href = 'pc.html';
             }
         }
 
