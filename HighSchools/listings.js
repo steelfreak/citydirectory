@@ -12,18 +12,19 @@ const listings = [
     "url": null,
     "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31881.619991641102!2d32.27852937431641!3d2.7563060999999904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a7d67918096f%3A0xbae9d55c6f2534c1!2sAlliance%20High%20School!5e0!3m2!1sen!2sug!4v1765360065773!5m2!1sen!2sug"
   },
-  {
-    "id": 2,
-    "category": "education",
-    "title": "Archangel Michael S.S",
-    "description": "Arch Angel Michael Secondary School is a school in Gulu District, Northern Uganda. Arch Angel Michael Secondary School is situated nearby to Koro Secondary School, as well as near Lapainat Primary School.",
-    "image": null,
-    "contact": null,
-    "address": "Gulu",
-    "rating": null,
-    "url": null,
-    "map": null
-  },
+  //Pamanently closed
+  // {
+  //   "id": 2,
+  //   "category": "education",
+  //   "title": "Archangel Michael S.S",
+  //   "description": "Arch Angel Michael Secondary School is a school in Gulu District, Northern Uganda. Arch Angel Michael Secondary School is situated nearby to Koro Secondary School, as well as near Lapainat Primary School.",
+  //   "image": null,
+  //   "contact": null,
+  //   "address": "Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": null
+  // },
   {
     "id": 3,
     "category": "education",
@@ -34,7 +35,7 @@ const listings = [
     "address": "P.O Box 482, Gulu",
     "rating": null,
     "url": null,
-    "map": null
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.121383220448!2d32.260236755460824!3d2.7804241879337748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a5d833488dd9%3A0x97ac512c3a84bab5!2sBishop%20Angelo%20Negri%20College%2C%20Gulu!5e0!3m2!1sen!2sug!4v1765446116711!5m2!1sen!2sug"
   },
   {
     "id": 4,
@@ -46,20 +47,21 @@ const listings = [
     "address": "P.O.Box 687, Gulu.",
     "rating": null,
     "url": null,
-    "map": null
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.1931473312097!2d32.3000712749878!3d2.7590973554264897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a6292cbfef7f%3A0x509f85c63f9e6648!2sCharity%20College!5e0!3m2!1sen!2sug!4v1765446592319!5m2!1sen!2sug"
   },
-  {
-    "id": 5,
-    "category": "education",
-    "title": "Creamland H.S. Gulu",
-    "description": null,
-    "image": null,
-    "contact": null,
-    "address": "Gulu",
-    "rating": null,
-    "url": null,
-    "map": null
-  },
+  //Pamanently closed
+  // {
+  //   "id": 5,
+  //   "category": "education",
+  //   "title": "Creamland H.S. Gulu",
+  //   "description": null,
+  //   "image": null,
+  //   "contact": null,
+  //   "address": "Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": null
+  // },
   {
     "id": 6,
     "category": "education",
@@ -94,56 +96,58 @@ const listings = [
     "address": "P.O.Box 912, Gulu",
     "rating": null,
     "url": null,
-    "map": null
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15940.739141907736!2d32.28944257698243!3d2.7615907989375335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a63bdca6b5e7%3A0x9bb21b83bd7383af!2sGulu%20College%20School!5e0!3m2!1sen!2sug!4v1765446813368!5m2!1sen!2sug"
   },
-  {
-    "id": 9,
-    "category": "education",
-    "title": "Gulu Crested Crane High School",
-    "description": null,
-    "image": null,
-    "contact": null,
-    "address": "Gulu",
-    "rating": null,
-    "url": null,
-    "map": null
-  },
-  {
-    "id": 10,
-    "category": "education",
-    "title": "Gulu Parentscomprehensive College",
-    "description": null,
-    "image": null,
-    "contact": null,
-    "address": "Gulu",
-    "rating": null,
-    "url": null,
-    "map": null
-  },
-  {
-    "id": 11,
-    "category": "education",
-    "title": "Hope H.S Gulu",
-    "description": null,
-    "image": null,
-    "contact": null,
-    "address": "Gulu",
-    "rating": null,
-    "url": null,
-    "map": null
-  },
-  {
-    "id": 12,
-    "category": "education",
-    "title": "Mother Angioletta S.S.",
-    "description": null,
-    "image": null,
-    "contact": null,
-    "address": "Gulu",
-    "rating": null,
-    "url": null,
-    "map": null
-  },
+  // {
+  //   "id": 9,
+  //   "category": "education",
+  //   "title": "Gulu Crested Crane High School",
+  //   "description": null,
+  //   "image": null,
+  //   "contact": null,
+  //   "address": "Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": null
+  // },
+  //Pamanently closed
+  // {
+  //   "id": 10,
+  //   "category": "education",
+  //   "title": "Gulu Parentscomprehensive College",
+  //   "description": null,
+  //   "image": null,
+  //   "contact": null,
+  //   "address": "Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": null
+  // },
+  // {
+  //   "id": 11,
+  //   "category": "education",
+  //   "title": "Hope H.S Gulu",
+  //   "description": null,
+  //   "image": null,
+  //   "contact": null,
+  //   "address": "Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": null
+  // },
+  // Primary School
+  // {
+  //   "id": 12,
+  //   "category": "education",
+  //   "title": "Mother Angioletta S.S.",
+  //   "description": null,
+  //   "image": null,
+  //   "contact": null,
+  //   "address": "Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": null
+  // },
   {
     "id": 13,
     "category": "education",
@@ -156,41 +160,43 @@ const listings = [
     "url": null,
     "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31880.6432639779!2d32.277757074316426!3d2.792528200000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a7847866c197%3A0x9c878cbed768e4f9!2sNile%20Progressive%20S%20S%2C%20Gulu.!5e0!3m2!1sen!2sug!4v1765360337722!5m2!1sen!2sug"
   },
-  {
-    "id": 14,
-    "category": "education",
-    "title": "Northern City H.S.",
-    "description": null,
-    "image": null,
-    "contact": null,
-    "address": "Gulu",
-    "rating": null,
-    "url": null,
-    "map": null
-  },
-  {
-    "id": 15,
-    "category": "education",
-    "title": "Northland High School Gulu",
-    "description": null,
-    "image": null,
-    "contact": null,
-    "address": "Gulu",
-    "rating": null,
-    "url": null,
-    "map": null
-  },
+  //Closed Pamanently
+  // {
+  //   "id": 14,
+  //   "category": "education",
+  //   "title": "Northern City H.S.",
+  //   "description": null,
+  //   "image": null,
+  //   "contact": null,
+  //   "address": "Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": null
+  // },
+  //Closed Pamanently
+  // {
+  //   "id": 15,
+  //   "category": "education",
+  //   "title": "Northland High School Gulu",
+  //   "description": null,
+  //   "image": null,
+  //   "contact": null,
+  //   "address": "Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": null
+  // },
   {
     "id": 16,
     "category": "education",
     "title": "Ocer Campion Jesuit College Gulu",
-    "description": null,
+    "description": "Ocer Campion Jesuit College (OCJC) is located in Northern Uganda, in Awich village, eight kilometers out of Gulu town.",
     "image": null,
-    "contact": null,
-    "address": "Gulu",
+    "contact": "+256 (0)393 215 124",
+    "address": "P.O. Box 807 Gulu, Uganda",
     "rating": null,
-    "url": null,
-    "map": null
+    "url": "https://ocercampion.org/",
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.0552080566986!2d32.34717537498781!3d2.7999462551999663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a76469c2f823%3A0xd60680d11c514229!2sOcer%20Campion%20Jesuit%20College%20%2CGulu!5e0!3m2!1sen!2sug!4v1765447775901!5m2!1sen!2sug"
   },
   {
     "id": 17,
@@ -202,56 +208,58 @@ const listings = [
     "address": "Gulu",
     "rating": null,
     "url": null,
-    "map": null
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127531.1811462873!2d32.26931189884702!3d2.7120793779485433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771013acad77351%3A0xfec19c92c70ba11b!2sOmoro%20Central%20High%20Schol!5e0!3m2!1sen!2sug!4v1765448023208!5m2!1sen!2sug"
   },
-  {
-    "id": 18,
-    "category": "education",
-    "title": "Paicho Ss Gulu",
-    "description": null,
-    "image": null,
-    "contact": null,
-    "address": "Gulu",
-    "rating": null,
-    "url": null,
-    "map": null
-  },
-  {
-    "id": 19,
-    "category": "education",
-    "title": "Pope Francis College Gulu",
-    "description": null,
-    "image": null,
-    "contact": null,
-    "address": "Gulu",
-    "rating": null,
-    "url": null,
-    "map": null
-  },
+  //P.7 School
+  // {
+  //   "id": 18,
+  //   "category": "education",
+  //   "title": "Paicho Ss Gulu",
+  //   "description": null,
+  //   "image": null,
+  //   "contact": null,
+  //   "address": "Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": null
+  // },
+  //Pamanently closed
+  // {
+  //   "id": 19,
+  //   "category": "education",
+  //   "title": "Pope Francis College Gulu",
+  //   "description": null,
+  //   "image": null,
+  //   "contact": null,
+  //   "address": "Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": null
+  // },
   {
     "id": 20,
     "category": "education",
-    "title": "Pope John Ii College Gulu",
+    "title": "St John Paul II College Gulu",
     "description": null,
     "image": null,
     "contact": null,
     "address": "Gulu",
     "rating": null,
     "url": null,
-    "map": null
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63761.922588289446!2d32.25298115055661!3d2.78078576416623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a6ba0ce49503%3A0x816d09c98835e73a!2sSt%20John%20Paul%20II%20College%20Gulu!5e0!3m2!1sen!2sug!4v1765448173869!5m2!1sen!2sug"
   },
-  {
-    "id": 21,
-    "category": "education",
-    "title": "St. Patrick'S College Gulu",
-    "description": null,
-    "image": null,
-    "contact": null,
-    "address": "Gulu",
-    "rating": null,
-    "url": null,
-    "map": null
-  },
+  // {
+  //   "id": 21,
+  //   "category": "education",
+  //   "title": "St. Patrick'S College Gulu",
+  //   "description": null,
+  //   "image": null,
+  //   "contact": null,
+  //   "address": "Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": null
+  // },
   {
     "id": 22,
     "category": "education",
@@ -264,18 +272,19 @@ const listings = [
     "url": null,
     "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31881.619991641102!2d32.27852937431641!3d2.7563060999999904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a731ded51259%3A0xbbc29314a684ca62!2sTrinity%20College%20Gulu!5e0!3m2!1sen!2sug!4v1765360108347!5m2!1sen!2sug"
   },
-  {
-    "id": 23,
-    "category": "education",
-    "title": "Unyama S.S Gulu",
-    "description": null,
-    "image": null,
-    "contact": null,
-    "address": "Aswa Unyama, Gulu",
-    "rating": null,
-    "url": null,
-    "map": null
-  },
+  // Pamanently closed
+  // {
+  //   "id": 23,
+  //   "category": "education",
+  //   "title": "Unyama S.S Gulu",
+  //   "description": null,
+  //   "image": null,
+  //   "contact": null,
+  //   "address": "Aswa Unyama, Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": null
+  // },
   {
     "id": 24,
     "category": "education",
@@ -286,43 +295,45 @@ const listings = [
     "address": "Gulu",
     "rating": null,
     "url": null,
-    "map": null
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.387449517047!2d32.29874117498769!3d2.7005101557466142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a908f404dd23%3A0x36b526fc054738f8!2sGulu%20Christian%20comprehensive%20school!5e0!3m2!1sen!2sug!4v1765448391341!5m2!1sen!2sug"
   },
-  {
-    "id": 25,
-    "category": "education",
-    "title": "Northern City High School",
-    "description": null,
-    "image": null,
-    "contact": null,
-    "address": "Gulu",
-    "rating": null,
-    "url": null,
-    "map": null
-  },
-  {
-    "id": 26,
-    "category": "education",
-    "title": "Helogolan High School Gulu",
-    "description": null,
-    "image": null,
-    "contact": null,
-    "address": "Gulu",
-    "rating": null,
-    "url": null,
-    "map": null
-  },
+  // Pamanently closed
+  // {
+  //   "id": 25,
+  //   "category": "education",
+  //   "title": "Northern City High School",
+  //   "description": null,
+  //   "image": null,
+  //   "contact": null,
+  //   "address": "Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": null
+  // },
+  // No proof of existence
+  // {
+  //   "id": 26,
+  //   "category": "education",
+  //   "title": "Helogolan High School Gulu",
+  //   "description": null,
+  //   "image": null,
+  //   "contact": null,
+  //   "address": "Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": null
+  // },
   {
     "id": 27,
     "category": "education",
-    "title": "Layibi High School Gulu",
+    "title": "St. Joseph's College Layibi (Clarion), Gulu",
     "description": "Government Aided UNEB No: U0040  A’level USE School Boarding ",
     "image": null,
     "contact": "0772611086",
     "address": "Gulu",
     "rating": null,
     "url": null,
-    "map": null
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.257504440912!2d32.295331674987864!3d2.7398306555323924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a998df1334b7%3A0xb819ce7b38f826bb!2sSt.%20Joseph&#39;s%20College%20Layibi%20(Clarion)%2C%20Gulu!5e0!3m2!1sen!2sug!4v1765448571183!5m2!1sen!2sug"
   },
   {
     "id": 28,
@@ -334,7 +345,7 @@ const listings = [
     "address": "Gulu",
     "rating": null,
     "url": null,
-    "map": null
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.2451475622198!2d32.34837656095178!3d2.8217970801423538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771a1647cacbec7%3A0xcf52db727cf910f6!2sPP%20Newton%20Secondary%20School!5e0!3m2!1sen!2sug!4v1765448671414!5m2!1sen!2sug"
   },
   {
     "id": 29,
@@ -538,20 +549,21 @@ const listings = [
     "address": "Gulu",
     "rating": null,
     "url": null,
-    "map": ""
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15937.882332825297!2d32.37743321260742!3d2.9668433542462402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1771766fb13da0c3%3A0x94a2be7e3fd95801!2sAwach%20Secondary%20School!5e0!3m2!1sen!2sug!4v1765448765470!5m2!1sen!2sug"
   },
-  {
-    "id": 46,
-    "category": "education",
-    "title": "Koro Secondary School",
-    "description": "Government Aided UNEB No: U1927 O’level USE School, Day",
-    "image": null,
-    "contact": "0773471780",
-    "address": "Gulu",
-    "rating": null,
-    "url": null,
-    "map": ""
-  },
+  //Pamanently closed
+  // {
+  //   "id": 46,
+  //   "category": "education",
+  //   "title": "Koro Secondary School",
+  //   "description": "Government Aided UNEB No: U1927 O’level USE School, Day",
+  //   "image": null,
+  //   "contact": "0773471780",
+  //   "address": "Gulu",
+  //   "rating": null,
+  //   "url": null,
+  //   "map": ""
+  // },
   {
     "id": 47,
     "category": "education",
@@ -562,7 +574,7 @@ const listings = [
     "address": "P.Obox 757, Gulu",
     "rating": null,
     "url": null,
-    "map": ""
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.6710085358804!2d32.46776677498793!3d2.6126548562162224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1770fd8ac4955555%3A0xe25f71c3179f5557!2sOpit%20Secondary%20School!5e0!3m2!1sen!2sug!4v1765448886550!5m2!1sen!2sug"
   },
   {
     "id": 48,
@@ -574,7 +586,7 @@ const listings = [
     "address": "Gulu",
     "rating": null,
     "url": null,
-    "map": ""
+    "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.033465807229!2d32.36319067498803!3d2.4958587568210335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1770f80dbc2382c3%3A0x68c8299dd3278cbd!2sSt%20Thomas%20Moore%20Secondary%20School!5e0!3m2!1sen!2sug!4v1765449038187!5m2!1sen!2sug"
   },
   {
     "id": 49,
