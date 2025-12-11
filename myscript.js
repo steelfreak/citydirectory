@@ -55,14 +55,14 @@
         category: 'event',
         description: '',
       },
-      // {
-      //   id: 8,
-      //   title: 'Career / Jobs',
-      //   image: 'Jobs/index.jpg',
-      //   url: 'Jobs/index.html',
-      //   category: 'Jobs',
-      //   description: '',
-      // },
+      {
+        id: 8,
+        title: 'HighSchools',
+        image: 'HighSchools/index.jpg',
+        url: 'HighSchools/index.html',
+        category: 'HighSchools',
+        description: '',
+      },
       {
         id: 9,
         title: 'Websites',
