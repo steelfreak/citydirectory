@@ -102,6 +102,14 @@
         url: 'Waste-mgt/index.html',
         category: 'Waste-mgt',
         description: '',
+      },
+      {
+        id: 14,
+        title: 'Games',
+        image: 'Games/index.jpg',
+        url: 'sd.dgulu.com',
+        category: 'Games',
+        description: '',
       }
     ];
 
