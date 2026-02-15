@@ -107,7 +107,7 @@
         id: 14,
         title: 'Games',
         image: 'Games/index.jpg',
-        url: 'sd.dgulu.com',
+        url: 'https://sd.dgulu.com',
         category: 'Games',
         description: '',
       }
