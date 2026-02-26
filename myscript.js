@@ -110,6 +110,14 @@
         url: 'https://sd.dgulu.com',
         category: 'Games',
         description: '',
+      },
+      {
+        id: 15,
+        title: 'Music',
+        image: 'Music/index.jpg',
+        url: 'https://music.dgulu.com',
+        category: 'Music',
+        description: '',
       }
     ];
 
