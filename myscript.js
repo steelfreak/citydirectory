@@ -157,7 +157,7 @@
           <img src="${item.image}" alt="${item.title}" />
           <div class="card-content">
             <h3>${item.title}</h3>
-            <a class="button" href="${item.url}">More Info</a>
+            <a class="button" href="${item.url}" target="_blank" rel="noopener noreferrer">More Info</a>
           </div>
         </article>
       `
