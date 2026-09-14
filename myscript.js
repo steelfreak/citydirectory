@@ -87,14 +87,14 @@
         category: 'Transport',
         description: '',
       },
-      {
-        id: 12,
-        title: 'Coperatives',
-        image: 'Coperatives/index.jpg',
-        url: 'Coperatives/index.html',
-        category: 'Coperatives',
-        description: '',
-      },
+      // {
+      //   id: 12,
+      //   title: 'Coperatives',
+      //   image: 'Coperatives/index.jpg',
+      //   url: 'Coperatives/index.html',
+      //   category: 'Coperatives',
+      //   description: '',
+      // },
       {
         id: 13,
         title: 'Waste-mgt',
