@@ -118,6 +118,14 @@
         url: 'https://music.dgulu.com',
         category: 'Music',
         description: '',
+      },
+      {
+        id: 16,
+        title: 'Hauling',
+        image: 'haul/index.jpg',
+        url: 'https://haulit.dgulu.com',
+        category: 'Hauling',
+        description: '',
       }
     ];
 
