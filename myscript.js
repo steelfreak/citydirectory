@@ -122,7 +122,7 @@
       {
         id: 16,
         title: 'Hauling',
-        image: 'haul/index.jpg',
+        image: 'Haul/index.jpg',
         url: 'https://haulit.dgulu.com',
         category: 'Hauling',
         description: '',
